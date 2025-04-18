@@ -9,10 +9,14 @@
 Organized by language, concept, and chaos-resistance.
 
 - 🟦 Golang
+  - [📁 View Golang Notes and Experiments](golang/README.md)
   - Basics, idioms, concurrency, and project patterns
+
 - 🦀 Rust
   - Ownership, lifetimes, async, and zero-cost abstractions
+
 - 🐍 Python (mostly for scripting tools & small hacks)
+
 - 🧪 Templates
   - Common code snippets and setup scripts
 
