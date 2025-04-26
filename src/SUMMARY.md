@@ -1,6 +1,6 @@
 # Summary
 
-- [Introduction](golang/go-with-habib-class-notes/intro.md)
+- [Introduction](golang/intro.md)
 
 - [Go With Habib Class Notes]()
   - [0 - Go Basics](golang/go-with-habib-class-notes/0-go-basics.md)
@@ -20,4 +20,4 @@
   - [29 - Array](golang/go-with-habib-class-notes/29-array.md)
   - [30 - Pointers](golang/go-with-habib-class-notes/30-pointers.md)
 
-- [Experiments](golang/go-with-habib-class-notes/experiments.md)
+- [Experiments](golang/experiments.md)
