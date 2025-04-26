@@ -9,7 +9,7 @@
 Organized by language, concept, and chaos-resistance.
 
 - 🟦 Golang
-  - [📁 View Golang Notes and Experiments](golang/README.md)
+  - [📁 View Golang Notes and Experiments](golang/intro.md)
   - Basics, idioms, concurrency, and project patterns
 
 - 🦀 Rust
