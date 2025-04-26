@@ -2,7 +2,7 @@
 
 - [Introduction](golang/go-with-habib-class-notes/intro.md)
 
-- [Go With Habib Class Notes](golang/go-with-habib-class-notes/0-go-basics.md)
+- [Go With Habib Class Notes]()
   - [0 - Go Basics](golang/go-with-habib-class-notes/0-go-basics.md)
   - [16 - Package Scope](golang/go-with-habib-class-notes/16-package-scope.md)
   - [17 - Scope Example](golang/go-with-habib-class-notes/17-scope-example.md)
