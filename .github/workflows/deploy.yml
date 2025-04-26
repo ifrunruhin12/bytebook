@@ -25,6 +25,9 @@ jobs:
             cargo install mdbook --version 0.4.40
           fi
 
+      - name: Clean old book
+        run: rm -rf book
+
       - name: Build the book
         run: mdbook build
 
