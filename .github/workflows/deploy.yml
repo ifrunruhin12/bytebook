@@ -3,7 +3,7 @@ name: Deploy mdBook to GitHub Pages
 on:
   push:
     branches:
-      - main  # or "master" if you use that
+      - main
 
 jobs:
   build-deploy:
@@ -13,10 +13,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Cache cargo binaries (mdBook)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin
+          key: ${{ runner.os }}-cargo-bin-mdbook-v0.4.40
+
       - name: Install mdBook
         run: |
-          curl -sSL https://github.com/rust-lang/mdBook/releases/latest/download/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz | tar xz
-          sudo mv mdbook /usr/local/bin/
+          if ! command -v mdbook > /dev/null; then
+            cargo install mdbook --version 0.4.40
+          fi
 
       - name: Build the book
         run: mdbook build
@@ -26,3 +33,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book
+
