@@ -20,5 +20,6 @@
     - [Class 28 - Receiver Function](golang/go-with-habib-class-notes/class-28-receiver-function.md)
     - [Class 29 - Array](golang/go-with-habib-class-notes/class-29-array.md)
     - [Class 30 - Pointers](golang/go-with-habib-class-notes/class-30-pointers.md)
+    - [Class 31 - Slices](golang/go-with-habib-class-notes/class-31-slices)
 
   - [Experiments](golang/experiments.md)
