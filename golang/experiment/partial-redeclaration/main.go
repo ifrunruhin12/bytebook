@@ -14,3 +14,19 @@ func main(){
 func print1()(int, int){
 	return 4, 5
 }
+
+/*
+package main
+
+import "fmt"
+
+func main() {
+    a := 7
+    fmt.Println(a) // 7
+    {
+        a := 6 //Here, a is shadowed
+        fmt.Println(a) // 6
+    }
+    fmt.Println(a) // 7
+}
+*/
