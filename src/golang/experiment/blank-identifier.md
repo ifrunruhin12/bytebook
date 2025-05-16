@@ -48,5 +48,66 @@ Okay so now let's do some experiment
 Sometimes people can abuse it and it causes hilarious bug
 
 1. Loop variable leaks beacuse of `_` abuse
-2. [Blank import to secretly bring hell](experiment002/main.go)
+2. Blank import to secretly bring hell
 3. Blank reciever methods causing existential crisis
+
+### Experiment 02
+
+This is the folder structure:
+
+```bash
+experiment002
+---aurora
+------hell.go
+---go.mod
+---main.go
+```
+This is the main.go
+
+```go
+package main
+
+import (
+	"fmt"
+	_"experiment/aurora"
+)
+
+func prime_checker(a int) bool {
+	b := a / 2
+	cnt := 0
+	for i:=1;i<=b;i++{
+		if a % i == 0 {
+			cnt++
+		}
+	}
+	return cnt == 1
+}
+
+func main() {
+	num := 61
+	if prime_checker(num) {
+		fmt.Printf("%d is a prime number", num)
+	}else {
+		fmt.Printf("%d is not a prime number", num)
+	}
+}
+```
+
+and this hell.go inside the aurora package
+```go
+package aurora
+
+import "fmt"
+
+func init(){
+	go func(){
+		for {
+			fmt.Println("I LIVE IN YOUR RAM NOW")
+		}
+	}()
+}
+
+func Add(a, b int) int {
+	return a + b
+}
+```

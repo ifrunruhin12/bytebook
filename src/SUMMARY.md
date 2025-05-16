@@ -22,4 +22,10 @@
     - [Class 30 - Pointers](golang/go-with-habib-class-notes/class-30-pointers.md)
     - [Class 31 - Slices](golang/go-with-habib-class-notes/class-31-slices.md)
 
-  - [Experiments](golang/experiments.md)
+  - [Experiments](golang/experiment/experiments.md)
+    - [Blank Identifier](golang/experiment/blank-identifier.md)
+    - [Init Function](golang/experiment/init-function.md)
+    - [Partial Declaration](golang/experiment/partial-redeclaration.md)
+    - [Pointer Experiment](golang/experiment/pointer-experiment.md)
+    - [Slice Capacity testing](golang/experiment/slice-capacity.md)
+
