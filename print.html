@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light sidebar-visible" dir="ltr">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 
 
         <!-- Custom HTML head -->
-
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -25,29 +25,26 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
-
-        <!-- Provide site root and default themes to javascript -->
-        <script>
-            const path_to_root = "";
-            const default_light_theme = "light";
-            const default_dark_theme = "navy";
-        </script>
-        <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                let theme = localStorage.getItem('mdbook-theme');
-                let sidebar = localStorage.getItem('mdbook-sidebar');
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -61,22 +58,24 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
-            let theme;
+            var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            const html = document.documentElement;
+            var html = document.querySelector('html');
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -84,25 +83,45 @@
                 sidebar = 'hidden';
             }
             sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <!-- populated by js -->
-            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
-            <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
-            </noscript>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="golang/intro.html"><strong aria-hidden="true">2.</strong> Golang</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/go-with-habib-class-notes.html"><strong aria-hidden="true">2.1.</strong> Go With Habib Class Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-0-go-basics.html"><strong aria-hidden="true">2.1.1.</strong> Go Basics</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-16-package-scope.html"><strong aria-hidden="true">2.1.2.</strong> Class 16 - Package Scope</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-17-scope-example.html"><strong aria-hidden="true">2.1.3.</strong> Class 17 - Scope Example</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-18-variable-shadowing.html"><strong aria-hidden="true">2.1.4.</strong> Class 18 - Variable Shadowing</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-19-function-types.html"><strong aria-hidden="true">2.1.5.</strong> Class 19 - Function Types</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-20-init-function.html"><strong aria-hidden="true">2.1.6.</strong> Class 20 - Init Function</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-21-anonymous-func-and-iife.html"><strong aria-hidden="true">2.1.7.</strong> Class 21 - Anonymous Functions and IIFE</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-22-function-expression-example.html"><strong aria-hidden="true">2.1.8.</strong> Class 22 - Function Expression Example</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-23-fof-vs-hof.html"><strong aria-hidden="true">2.1.9.</strong> Class 23 - Function of Function vs Higher Order Function</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-24-internal-memory.html"><strong aria-hidden="true">2.1.10.</strong> Class 24 - Internal Memory</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-25-end-of-internal-memory.html"><strong aria-hidden="true">2.1.11.</strong> Class 25 - End of Internal Memory</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-26-closure.html"><strong aria-hidden="true">2.1.12.</strong> Class 26 - Closure</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-27-struct.html"><strong aria-hidden="true">2.1.13.</strong> Class 27 - Struct</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-28-receiver-function.html"><strong aria-hidden="true">2.1.14.</strong> Class 28 - Receiver Function</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-29-array.html"><strong aria-hidden="true">2.1.15.</strong> Class 29 - Array</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-30-pointers.html"><strong aria-hidden="true">2.1.16.</strong> Class 30 - Pointers</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-31-slices.html"><strong aria-hidden="true">2.1.17.</strong> Class 31 - Slices</a></li></ol></li><li class="chapter-item expanded "><a href="golang/experiment/experiments.html"><strong aria-hidden="true">2.2.</strong> Experiments</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="golang/experiment/blank-identifier.html"><strong aria-hidden="true">2.2.1.</strong> Blank Identifier</a></li><li class="chapter-item expanded "><a href="golang/experiment/init-function.html"><strong aria-hidden="true">2.2.2.</strong> Init Function</a></li><li class="chapter-item expanded "><a href="golang/experiment/partial-redeclaration.html"><strong aria-hidden="true">2.2.3.</strong> Partial Declaration</a></li><li class="chapter-item expanded "><a href="golang/experiment/pointer-experiment.html"><strong aria-hidden="true">2.2.4.</strong> Pointer Experiment</a></li><li class="chapter-item expanded "><a href="golang/experiment/slice-capacity.html"><strong aria-hidden="true">2.2.5.</strong> Slice Capacity testing</a></li><li class="chapter-item expanded "><a href="golang/experiment/io-methods-golang.html"><strong aria-hidden="true">2.2.6.</strong> I/O methods in Golang</a></li></ol></li></ol></li></ol>
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -112,7 +131,6 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -2540,6 +2558,611 @@ func nextSizeClass(n int) int {
 <p>That would get you very close to how Go grows slices.</p>
 <h2 id="this-can-change-anytime"><a class="header" href="#this-can-change-anytime">This can change anytime</a></h2>
 <p>The Go team can tweak the growth rules in future versions of Go to improve memory performance. So don’t rely on this behavior in production code for anything critical—just treat it as an optimization detail.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="input-and-output-method-in-golang"><a class="header" href="#input-and-output-method-in-golang">Input and Output Method in Golang</a></h1>
+<h2 id="why-its-necessary"><a class="header" href="#why-its-necessary">Why it's necessary?</a></h2>
+<p>We often work with data no matter which sector we are wroking on of Computer Science. Specially as a competitive programmer, you often have to work with different kind of input and output type.
+Today, we will have a look into those.</p>
+<h2 id="-tldr-of-io-in-go"><a class="header" href="#-tldr-of-io-in-go">🧠 TL;DR of I/O in Go:</a></h2>
+<p>Go’s standard input/output is <strong>safe and readable</strong>, but <strong>slow</strong> for competitive programming or heavy I/O use. Hence, people use <strong>Fast I/O</strong> with <code>bufio</code></p>
+<h3 id="-1-standard-inputoutput"><a class="header" href="#-1-standard-inputoutput">🔸 1. Standard Input/Output</a></h3>
+<p>Go’s basic I/O uses:</p>
+<ul>
+<li>
+<p><code>fmt.Scan</code>, <code>fmt.Scanf</code>, <code>fmt.Scanln</code></p>
+</li>
+<li>
+<p><code>fmt.Print</code>, <code>fmt.Printf</code>, <code>fmt.Println</code></p>
+</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-go">var n int
+fmt.Scan(&amp;n)
+fmt.Println(n)
+</code></pre>
+<p><strong>Pros</strong>: Simple and easy.</p>
+<p><strong>Cons</strong>: Slow due to lots of syscalls and formatting.</p>
+<h3 id="-2-buffered-io-using-bufio"><a class="header" href="#-2-buffered-io-using-bufio">🔸 2. Buffered I/O using <code>bufio</code></a></h3>
+<p><code>bufio.NewReader</code> and <code>bufio.NewWriter</code> buffer input/output, reducing syscall overhead = ⚡️faster I/O.</p>
+<pre><code class="language-go">reader := bufio.NewReader(os.Stdin)
+writer := bufio.NewWriter(os.Stdout)
+</code></pre>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
+func main() {
+	in := bufio.NewReader(os.Stdin)
+	out := bufio.NewWriter(os.Stdout)
+	defer out.Flush() // ensures everything is printed at the end
+
+	line, _ := in.ReadString('\n')       // read a full line from stdin
+	line = strings.TrimSpace(line)       // remove trailing newline/whitespace
+	a, _ := strconv.Atoi(line)           // convert string to int
+	fmt.Fprintln(out, a)                 // write to buffered output
+}
+</code></pre>
+<p><code>ReadString('\n')</code> reads until newline. <code>writer.Flush()</code> is needed to print output.</p>
+<h3 id="-3-os-package"><a class="header" href="#-3-os-package">🔸 3. <code>os</code> Package</a></h3>
+<p>For even lower-level access:</p>
+<ul>
+<li><code>os.Stdin.Read()</code></li>
+<li><code>os.Stdout.Write()</code></li>
+</ul>
+<p>Rarely used unless you’re doing file I/O or raw bytes</p>
+<pre><code class="language-go">file, _ := os.Create("output.txt")
+fmt.Fprint(file, "This is how you write to a file, by the way")
+file.Close()
+</code></pre>
+<p>Using <code>os.Create</code> and <code>os.Open</code> to write and read from file:</p>
+<p>Let’s say you're writing some lines to a file and then reading them back.</p>
+<h4 id="writing-to-a-file-buffered-output"><a class="header" href="#writing-to-a-file-buffered-output">Writing to a File (Buffered Output)</a></h4>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	// Create file
+	file, err := os.Create("example.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	// Create a buffered writer
+	writer := bufio.NewWriter(file)
+
+	// Write some lines
+	for i := 1; i &lt;= 5; i++ {
+		fmt.Fprintf(writer, "This is line %d\n", i)
+	}
+
+	// Flush everything to file
+	writer.Flush()
+}
+</code></pre>
+<p>This will create a file called <code>example.txt</code> with 5 lines. The data is stored in a buffer first and only written to disk when <code>Flush()</code> is called, which is more efficient.</p>
+<h4 id="reading-from-the-file-buffered-input"><a class="header" href="#reading-from-the-file-buffered-input">Reading from the File (Buffered Input)</a></h4>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	// Open file
+	file, err := os.Open("example.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	// Create a buffered reader
+	reader := bufio.NewReader(file)
+
+	for {
+		line, err := reader.ReadString('\n')
+		if err != nil {
+			break // EOF reached
+		}
+		fmt.Print(line)
+	}
+}
+</code></pre>
+<h3 id="real-world-analogy"><a class="header" href="#real-world-analogy">Real-World Analogy:</a></h3>
+<p>Think of buffered I/O like taking notes in a notepad during a lecture. You don’t run to the printer after every word. You fill up the page (buffer), then print (flush). That’s why it’s efficient.</p>
+<h2 id="now-what-exactly-is-buffered-io-and-a-buffer"><a class="header" href="#now-what-exactly-is-buffered-io-and-a-buffer">Now what exactly is buffered I/O and a buffer</a></h2>
+<h3 id="what-is-a-buffer"><a class="header" href="#what-is-a-buffer">What is a buffer?</a></h3>
+<p><strong>A buffer is a chunk of memory</strong> — specifically, it's temporary storage used to hold data before it's read or written.</p>
+<p>Think of it like:</p>
+<blockquote>
+<p>"I’ll store this data in RAM for now... and when I’ve got enough, I’ll send it all in one go."</p>
+</blockquote>
+<h4 id="quick-visual"><a class="header" href="#quick-visual">Quick Visual:</a></h4>
+<pre><code class="language-css">[User Input] ---&gt; [ BUFFER (in memory) ] ---&gt; [ Actual Program or File or OS ]
+</code></pre>
+<p>Or for output:</p>
+<pre><code class="language-css">[Program Output] ---&gt; [ BUFFER (in memory) ] ---&gt; [ Screen / File / OS ]
+</code></pre>
+<h4 id="real-world-again"><a class="header" href="#real-world-again">Real World Again:</a></h4>
+<p>Imagine a notepad (buffer) in a restaurant:</p>
+<ul>
+<li>
+<p>You write down all orders first.</p>
+</li>
+<li>
+<p>Once the notepad is full, or you're ready, you go to the kitchen and shout them all out at once.</p>
+</li>
+</ul>
+<p>The notepad = <strong>the buffer</strong></p>
+<p>The kitchen = <strong>the OS or final destination</strong></p>
+<h4 id="a-buffer-is-memory-used-to"><a class="header" href="#a-buffer-is-memory-used-to">A buffer is memory, used to:</a></h4>
+<ul>
+<li>
+<p>🛑 Reduce expensive operations (like I/O syscalls)</p>
+</li>
+<li>
+<p>🚀 Boost performance by batching reads/writes</p>
+</li>
+</ul>
+<h3 id="buffered-vs-unbuffered-io--the-core-idea"><a class="header" href="#buffered-vs-unbuffered-io--the-core-idea">Buffered vs Unbuffered I/O — The Core Idea</a></h3>
+<h4 id="-unbuffered-io"><a class="header" href="#-unbuffered-io">🔸 Unbuffered I/O:</a></h4>
+<p>Every time you read or write, it IMMEDIATELY talks to the OS.</p>
+<p>Like:</p>
+<ul>
+<li>"Yo OS, give me 1 byte"</li>
+<li>"Now give me another..."</li>
+<li>"Now print this one line..."</li>
+</ul>
+<p>That’s slow, because system calls are expensive. Too many = 🐌</p>
+<h4 id="-buffered-io"><a class="header" href="#-buffered-io">🔸 Buffered I/O:</a></h4>
+<p>You don't ask the OS every single time.
+Instead, you collect a bunch of input/output in memory (a buffer), and once it's full or you're done, then you send it all at once</p>
+<p>💥 Think of it like:</p>
+<ul>
+<li>
+<p>"Lemme fill this bucket with water (data)..."</p>
+</li>
+<li>
+<p>"Once it's full, I’ll throw it at the OS!"</p>
+</li>
+</ul>
+<h4 id="-real-world-analogy"><a class="header" href="#-real-world-analogy">🧃 Real World Analogy</a></h4>
+<p>Imagine you're working at a cafeteria:</p>
+<p><strong>🍽 Unbuffered I/O:</strong></p>
+<ul>
+<li>
+<p>A customer orders 1 french fry.</p>
+</li>
+<li>
+<p>You go to the kitchen, grab 1 fry, walk back, and give it.</p>
+</li>
+<li>
+<p>Then they want another... repeat.</p>
+</li>
+<li>
+<p>You're making 100 trips for 100 fries 😵</p>
+</li>
+</ul>
+<p><strong>🧃 Buffered I/O:</strong></p>
+<ul>
+<li>
+<p>You wait until they ask for a full plate of fries (say 50).</p>
+</li>
+<li>
+<p>You go once, get a plate, deliver it in one trip.</p>
+</li>
+<li>
+<p>Boom. Less time, less effort. 💯</p>
+</li>
+</ul>
+<p>This is how buffering works.</p>
+<h4 id="why-use-fast-io"><a class="header" href="#why-use-fast-io">Why use Fast I/O?</a></h4>
+<p>In CP or large datasets:</p>
+<ul>
+<li>
+<p><code>fmt.Scan()</code> can TLE.</p>
+</li>
+<li>
+<p><code>bufio.Reader/Writer</code> is ~3x–10x faster.</p>
+</li>
+<li>
+<p>Helps when you're reading/writing millions of numbers or strings.</p>
+</li>
+</ul>
+<h3 id="programming-example"><a class="header" href="#programming-example">Programming Example</a></h3>
+<p>🐢 Unbuffered Output:</p>
+<pre><code class="language-go">fmt.Println("Hello")  // Makes a syscall to write
+fmt.Println("World")  // Another syscall
+</code></pre>
+<p>Every line = syscall = 🐌 slow when done a LOT.</p>
+<p>⚡ Buffered Output:</p>
+<pre><code class="language-go">out := bufio.NewWriter(os.Stdout)
+fmt.Fprintln(out, "Hello")  // Goes into memory
+fmt.Fprintln(out, "World")  // Still in memory
+out.Flush()                 // Sends both at once 🚀
+</code></pre>
+<h3 id="few-key-notes"><a class="header" href="#few-key-notes">Few key notes:</a></h3>
+<ul>
+<li>
+<p>🧠 Buffer = memory (slice of bytes), usually on the heap</p>
+</li>
+<li>
+<p>📦 <code>bufio.Writer</code> lives in heap, accessed via variable out</p>
+</li>
+<li>
+<p>⏱ Buffered output is delayed → flushed via Flush() (can be automatic with defer)</p>
+</li>
+<li>
+<p>⚙️ Allocation happens at runtime, not during compilation</p>
+</li>
+</ul>
+<h3 id="question-that-can-be-asked"><a class="header" href="#question-that-can-be-asked">Question that can be asked!</a></h3>
+<blockquote>
+<p>"Isn't heap slower than stack? Then why is buffered I/O faster?"</p>
+</blockquote>
+<h4 id="answer"><a class="header" href="#answer">Answer:</a></h4>
+<ul>
+<li>✅ Stack is faster than heap.</li>
+<li>❌ But stack can't hold large/dynamic buffers.</li>
+<li>🔥 Buffered I/O is fast not because of where the buffer is, but because it minimizes syscalls by batching output.</li>
+<li>💡 One syscall is always better than many, even if the buffer lives on the heap.</li>
+</ul>
+<h3 id="-analogy"><a class="header" href="#-analogy">🤖 Analogy:</a></h3>
+<ul>
+<li>
+<p>🐢 Unbuffered I/O = 1 pigeon per letter = slow</p>
+</li>
+<li>
+<p>🚀 Buffered I/O = write all letters, put them in a bag, and send 1 pigeon with the whole bag</p>
+</li>
+</ul>
+<p><strong>The cost isn't the writing... it's the pigeon trips (syscalls).</strong></p>
+<h2 id="experiment001"><a class="header" href="#experiment001">Experiment001</a></h2>
+<h3 id="bad-version-missing-output-due-to-early-return"><a class="header" href="#bad-version-missing-output-due-to-early-return">BAD VERSION (missing output due to early return)</a></h3>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	out := bufio.NewWriter(os.Stdout)
+
+	fmt.Fprintln(out, "Starting program...")
+
+	var condition = true
+	if condition {
+		fmt.Fprintln(out, "Early exit happened!")
+		return // ⚠️ Exits before Flush()!
+	}
+
+	fmt.Fprintln(out, "Program finished normally.")
+	out.Flush()
+}
+</code></pre>
+<h4 id="what-happens"><a class="header" href="#what-happens">What happens?</a></h4>
+<ul>
+<li>
+<p><code>"Starting program..."</code> and <code>"Early exit happened!"</code> get written to the buffer.</p>
+</li>
+<li>
+<p>But we never call <code>Flush()</code>, because return happens before it.</p>
+</li>
+<li>
+<p>So... you see nothing. Total ghosted output.</p>
+</li>
+</ul>
+<h3 id="good-version-using-defer-outflush"><a class="header" href="#good-version-using-defer-outflush">GOOD VERSION using defer out.Flush()</a></h3>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+func main() {
+	out := bufio.NewWriter(os.Stdout)
+	defer out.Flush() // 👈 now this always runs at the end, no matter where return happens
+
+	fmt.Fprintln(out, "Starting program...")
+
+	var condition = true
+	if condition {
+		fmt.Fprintln(out, "Early exit happened!")
+		return // 🛡️ still prints everything because defer handles it
+	}
+
+	fmt.Fprintln(out, "Program finished normally.")
+}
+</code></pre>
+<p>Now everything you printed gets flushed properly, even if your function returns early</p>
+<h3 id="-tldr-4"><a class="header" href="#-tldr-4">🧠 TL;DR</a></h3>
+<ul>
+<li>
+<p>You must use defer out.Flush() when:</p>
+<ul>
+<li>
+<p>Your function has multiple return paths.</p>
+</li>
+<li>
+<p>You want to avoid forgetting to flush manually.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>It's basically an "auto-save" for your output.</p>
+</li>
+</ul>
+<h2 id="experiment002"><a class="header" href="#experiment002">Experiment002</a></h2>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"time"
+)
+
+func main() {
+	out := bufio.NewWriter(os.Stdout)
+
+	fmt.Fprintln(out, "Starting tests...")
+	out.Flush() // 👈 First flush so this shows immediately
+
+	for i := 1; i &lt;= 5; i++ {
+		time.Sleep(500 * time.Millisecond) // simulate work
+		fmt.Fprintf(out, "Testcase %d passed ✅\n", i)
+		out.Flush() // 👈 Flush after every update to give real-time output
+	}
+
+	fmt.Fprintln(out, "All tests completed 🎉")
+	out.Flush() // 👈 Final flush just in case
+}
+</code></pre>
+<h3 id="-why-multiple-flushs"><a class="header" href="#-why-multiple-flushs">💡 Why multiple <code>Flush()</code>s?</a></h3>
+<p>Because if you don't flush after each message, everything gets buffered and shows up only at the end, defeating the point of real-time feedback.</p>
+<h3 id="-use-case-examples"><a class="header" href="#-use-case-examples">🔥 Use case examples:</a></h3>
+<ul>
+<li>
+<p>Online judges showing output before TLE</p>
+</li>
+<li>
+<p>CLIs with progress logs</p>
+</li>
+<li>
+<p>Live coding tools or debuggers</p>
+</li>
+<li>
+<p>Streaming JSON or logs over network</p>
+</li>
+</ul>
+<h2 id="experiment003"><a class="header" href="#experiment003">Experiment003</a></h2>
+<blockquote>
+<p>The point of this experiment is to see how much time difference is there between buffered I/O and unbuffered I/O</p>
+</blockquote>
+<h3 id="-buffered-io-version-with-timing"><a class="header" href="#-buffered-io-version-with-timing">✅ Buffered I/O Version (with timing)</a></h3>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+)
+
+var (
+	in  = bufio.NewReader(os.Stdin)
+	out = bufio.NewWriter(os.Stdout)
+)
+
+func readLine() string {
+	line, _ := in.ReadString('\n')
+	return strings.TrimSpace(line)
+}
+
+func readInt() int {
+	n, _ := strconv.Atoi(readLine())
+	return n
+}
+
+func readInts() []int {
+	line := readLine()
+	parts := strings.Fields(line)
+	nums := make([]int, len(parts))
+	for i, s := range parts {
+		nums[i], _ = strconv.Atoi(s)
+	}
+	return nums
+}
+
+func isPrime(n int) bool {
+	if n &lt; 2 {
+		return false
+	}
+	for i := 2; i*i &lt;= n; i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+
+func main() {
+	start := time.Now()
+	defer out.Flush()
+
+	t := readInt()
+	for i := 0; i &lt; t; i++ {
+		n := readInt()
+		arr := readInts()
+		found := false
+		for _, v := range arr {
+			if isPrime(v) {
+				found = true
+				break
+			}
+		}
+		fmt.Fprintln(out, found)
+	}
+	elapsed := time.Since(start)
+	fmt.Fprintln(os.Stderr, "Buffered IO Time:", elapsed)
+}
+</code></pre>
+<h3 id="-unbuffered-io-version-with-timing"><a class="header" href="#-unbuffered-io-version-with-timing">🐢 Unbuffered I/O Version (with timing)</a></h3>
+<pre><code class="language-go">package main
+
+import (
+	"fmt"
+	"os"
+	"time"
+)
+
+func isPrime(n int) bool {
+	if n &lt; 2 {
+		return false
+	}
+	for i := 2; i*i &lt;= n; i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+
+func main() {
+	start := time.Now()
+
+	var t int
+	fmt.Scan(&amp;t)
+
+	for i := 0; i &lt; t; i++ {
+		var n int
+		fmt.Scan(&amp;n)
+		found := false
+		for j := 0; j &lt; n; j++ {
+			var x int
+			fmt.Scan(&amp;x)
+			if isPrime(x) {
+				found = true
+			}
+		}
+		fmt.Println(found)
+	}
+
+	elapsed := time.Since(start)
+	fmt.Fprintln(os.Stderr, "Unbuffered IO Time:", elapsed)
+}
+</code></pre>
+<h3 id="how-to-test"><a class="header" href="#how-to-test">How to Test:</a></h3>
+<p>Run both programs with the same input. Example input file (<code>input.txt</code>):</p>
+<pre><code class="language-txt">5
+4
+1 4 6 8
+3
+9 11 10
+5
+1 2 3 4 5
+2
+10 15
+3
+6 7 8
+</code></pre>
+<p>Then run:</p>
+<pre><code class="language-bash">go run buffered.go &lt; input.txt
+go run unbuffered.go &lt; input.txt
+</code></pre>
+<h2 id="now-fastio-template-with-full-breakdown"><a class="header" href="#now-fastio-template-with-full-breakdown">Now, fastIO template (with full breakdown)</a></h2>
+<pre><code class="language-go">package main
+
+import (
+	"bufio"           // For fast buffered input/output
+	"fmt"             // For formatted printing (we only use fmt for testing/debug)
+	"os"              // To get access to stdin, stdout
+	"strconv"         // To convert strings to ints
+	"strings"         // To split strings into slices (fields)
+)
+
+//Globals
+
+var (
+	in  = bufio.NewReader(os.Stdin)   // Fast input reader
+	out = bufio.NewWriter(os.Stdout)  // Fast output writer
+)
+
+/*
+bufio.NewReader: Buffers stdin so you don’t block on every byte.
+
+bufio.NewWriter: Buffers stdout, much faster. Needs out.Flush() at the end.
+*/
+
+func readLine() string {
+	line, _ := in.ReadString('\n')               // Reads until newline
+	return strings.TrimSpace(line)               // Removes \n and spaces
+}
+
+/*
+Returns one full line as string.
+
+TrimSpace avoids issues with trailing \n or spaces.
+*/
+
+func readInt() int {
+	n, _ := strconv.Atoi(readLine())            // Converts line to int
+	return n
+}
+
+/*
+    Calls readLine() → "123"
+
+    Converts to 123
+
+    Ignores errors (_) — fine for CP, but not ideal in prod code.
+*/
+func readInts() []int {
+	line := readLine()                           // Reads a line like: "1 2 3"
+	parts := strings.Fields(line)                // Splits into ["1", "2", "3"]
+	nums := make([]int, len(parts))
+	for i, s := range parts {
+		nums[i], _ = strconv.Atoi(s)             // Convert each to int
+	}
+	return nums
+}
+//Used for reading multiple ints in one line, space-separated.
+
+func readStrings() []string {
+	return strings.Fields(readLine())            // Like readInts, but keeps strings
+}
+
+/*
+- Splits a line into words by space.
+
+- Perfect for string array input.
+*/
+
+func main() {
+    defer out.Flush() //Ensures everything buffered in out is printed at the end.
+
+
+    //code goes here
+}
+</code></pre>
 
                     </main>
 
@@ -2558,22 +3181,6 @@ func nextSizeClass(n int) int {
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
