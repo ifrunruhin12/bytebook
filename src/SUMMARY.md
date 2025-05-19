@@ -28,4 +28,5 @@
     - [Partial Declaration](golang/experiment/partial-redeclaration.md)
     - [Pointer Experiment](golang/experiment/pointer-experiment.md)
     - [Slice Capacity testing](golang/experiment/slice-capacity.md)
+    - [I/O methods in Golang](golang/experiment/io-methods-golang.md)
 
