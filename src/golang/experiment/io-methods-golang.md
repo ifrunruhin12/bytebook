@@ -1,7 +1,7 @@
 # Input and Output Method in Golang
 
 ## Why it's necessary?
-We often work with data no matter which sector we are wroking on of Computer Science. Specially as a competitive programmer, you often have to work with different kind of input and output type.
+We often work with data no matter which sector we are working on Computer Science. Specially as a competitive programmer, you often have to work with different kind of input and output type.
 Today, we will have a look into those.
 
 ## 🧠 TL;DR of I/O in Go:
