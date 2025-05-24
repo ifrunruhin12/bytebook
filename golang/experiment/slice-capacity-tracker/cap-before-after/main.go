@@ -14,7 +14,11 @@ func main() {
 	fmt.Printf("Cap before\tCap after adding an element\tPercentage of growth\n")
 	for i:=1;i<=100;i++{
 		res := slice_cap(i)
+		//_ = res
 		fmt.Printf("%d\t%d\t(+%.2f%%)\n", i, res, float64(res-i)/float64(i)*100)
+		//fmt.Printf("%d\n", i)
+		//fmt.Printf("%d\n", res)
+		//fmt.Printf("+%.2f%%\n", float64(res-i)/float64(i)*100)
 	}
 }
 
