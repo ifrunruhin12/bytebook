@@ -3273,6 +3273,56 @@ SELECT * FROM (SELECT id FROM users WHERE active = 1) AS active_users;
 <h3 id="-drop-table"><a class="header" href="#-drop-table">✅ DROP TABLE</a></h3>
 <pre><code class="language-sql">DROP TABLE users;
 </code></pre>
+<h2 id="-keys-in-sql"><a class="header" href="#-keys-in-sql">🔑 Keys in SQL</a></h2>
+<h3 id="-primary-key"><a class="header" href="#-primary-key">🔹 Primary Key</a></h3>
+<p>A column (or set of columns) that <strong>uniquely identifies each row</strong> in a table.</p>
+<ul>
+<li>Must be unique</li>
+<li>Cannot be NULL</li>
+</ul>
+<pre><code class="language-sql">CREATE TABLE users (
+  id INT PRIMARY KEY,
+  name VARCHAR(100)
+);
+</code></pre>
+<h3 id="-foreign-key"><a class="header" href="#-foreign-key">🔹 Foreign Key</a></h3>
+<p>A column that <strong>references the primary key of another table</strong> to establish a relationship between them.</p>
+<ul>
+<li>Maintains <strong>referential integrity</strong></li>
+<li>Can be NULL (if optional relationship)</li>
+</ul>
+<pre><code class="language-sql">CREATE TABLE orders (
+  id INT PRIMARY KEY,
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+</code></pre>
+<h3 id="-surrogate-key"><a class="header" href="#-surrogate-key">🔹 Surrogate Key</a></h3>
+<p>An <strong>artificial key</strong> used as a unique identifier (usually <code>AUTO_INCREMENT</code> or <code>UUID</code>)</p>
+<ul>
+<li>Has no business meaning</li>
+<li>Used instead of natural keys to avoid complications</li>
+</ul>
+<pre><code class="language-sql">CREATE TABLE products (
+  product_id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100)
+);
+</code></pre>
+<h3 id="-composite-key"><a class="header" href="#-composite-key">🔹 Composite Key</a></h3>
+<p>A <strong>primary key made of multiple columns</strong>. Used when a single column can’t uniquely identify a row.</p>
+<pre><code class="language-sql">CREATE TABLE enrollment (
+  student_id INT,
+  course_id INT,
+  PRIMARY KEY (student_id, course_id)
+);
+</code></pre>
+<h3 id="-candidate-key"><a class="header" href="#-candidate-key">🔹 Candidate Key</a></h3>
+<p>Any column (or set of columns) that <strong>could be a primary key</strong> (i.e., unique and non-null).</p>
+<ul>
+<li>One becomes the primary key, others are alternate keys.</li>
+</ul>
+<h3 id="alternate-key"><a class="header" href="#alternate-key">Alternate Key</a></h3>
+<p>A <strong>candidate key</strong> that was not chosen as the primary key but can still uniquely identify rows.</p>
 <h2 id="-data-types"><a class="header" href="#-data-types">📋 Data Types</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>INT</code></td><td>Integer values</td></tr>
@@ -3430,7 +3480,50 @@ What does AUTO_INCREMENT do?
 Automatically increases the value of a numeric column (usually a primary key) on each new insert.
 </code></pre>
 <hr />
-<p>👾 <em>Add more as you go (e.g. JOINs, GROUP BY, subqueries, etc.). Keep cooking, dev sorcerer!</em></p>
+<pre><code>🗂️  Question:
+What is a Primary Key?
+
+📦  Answer:
+A column (or combination) that uniquely identifies each row in a table. Cannot be NULL or duplicated.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What is a Foreign Key?
+
+📦  Answer:
+A column that refers to the Primary Key in another table to maintain relational integrity.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What is a Surrogate Key?
+
+📦  Answer:
+An artificially generated key (like AUTO_INCREMENT or UUID) used to uniquely identify a record without business meaning.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What is a Composite Key?
+
+📦  Answer:
+A Primary Key made up of multiple columns together to uniquely identify a row.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What is a Candidate Key?
+
+📦  Answer:
+A column (or group) that could serve as a Primary Key — it's unique and non-null.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What is an Alternate Key?
+
+📦  Answer:
+A Candidate Key that was not chosen as the Primary Key but is still unique and can identify rows.
+</code></pre>
+<hr />
+<p>👾 Keep these in mind when designing tables or answering DBMS interview questions.</p>
+<p><em>Add more as you go (e.g. JOINs, GROUP BY, subqueries, etc.). Keep cooking, dev sorcerer!</em></p>
 
                     </main>
 
