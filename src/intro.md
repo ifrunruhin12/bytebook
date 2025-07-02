@@ -8,17 +8,23 @@
 
 Organized by language, concept, and chaos-resistance.
 
-- 🟦 Golang
+🟦 Golang
   - [📁 View Golang Notes and Experiments](golang/intro.md)
   - Basics, idioms, concurrency, and project patterns
 
-- 🦀 Rust
-  - Ownership, lifetimes, async, and zero-cost abstractions
+🗄️ SQL  
+  - 📁 View SQL Cheatsheets, Flashcards, and Practice  
+  - Relational theory, query mastery, and interview prep  
 
-- 🐍 Python (mostly for scripting tools & small hacks)
+🧪 Templates  
+  - 📁 Common code snippets and setup scripts  
+  - Shell templates, project boilerplates, and productivity hacks  
 
-- 🧪 Templates
-  - Common code snippets and setup scripts
+🦀 Rust *(coming soon)*  
+  - Ownership, lifetimes, async, and zero-cost abstractions  
+
+🐍 Python *(coming soon)*  
+  - Mostly for scripting tools & small hacks
 
 ---
 
