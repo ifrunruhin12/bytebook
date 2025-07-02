@@ -30,3 +30,7 @@
     - [Slice Capacity testing](golang/experiment/slice-capacity.md)
     - [I/O methods in Golang](golang/experiment/io-methods-golang.md)
 
+- [SQL](sql/intro.md)
+  - [SQL Cheatsheet](sql/cheatsheet/00-sql-cheatsheet.md)
+  - [Flash cards](sql/flashcards/flashcards.md)
+
