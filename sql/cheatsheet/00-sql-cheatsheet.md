@@ -56,6 +56,75 @@ ALTER TABLE users DROP COLUMN age;
 DROP TABLE users;
 ```
 
+## 🔑 Keys in SQL
+
+### 🔹 Primary Key
+
+A column (or set of columns) that **uniquely identifies each row** in a table.
+
+- Must be unique
+- Cannot be NULL
+
+```sql
+CREATE TABLE users (
+  id INT PRIMARY KEY,
+  name VARCHAR(100)
+);
+```
+
+### 🔹 Foreign Key
+
+A column that **references the primary key of another table** to establish a relationship between them.
+
+- Maintains **referential integrity**
+- Can be NULL (if optional relationship)
+
+```sql
+CREATE TABLE orders (
+  id INT PRIMARY KEY,
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+```
+
+### 🔹 Surrogate Key
+
+An **artificial key** used as a unique identifier (usually `AUTO_INCREMENT` or `UUID`)
+
+- Has no business meaning
+- Used instead of natural keys to avoid complications
+
+```sql
+CREATE TABLE products (
+  product_id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100)
+);
+```
+
+### 🔹 Composite Key
+
+A **primary key made of multiple columns**. Used when a single column can’t uniquely identify a row.
+
+```sql
+CREATE TABLE enrollment (
+  student_id INT,
+  course_id INT,
+  PRIMARY KEY (student_id, course_id)
+);
+```
+
+### 🔹 Candidate Key
+
+Any column (or set of columns) that **could be a primary key** (i.e., unique and non-null).
+
+- One becomes the primary key, others are alternate keys.
+
+
+### Alternate Key
+
+A **candidate key** that was not chosen as the primary key but can still uniquely identify rows.
+
+
 ## 📋 Data Types
 
 | Type        | Description                         |
