@@ -157,3 +157,9 @@ INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
 | `DEFAULT`        | Sets default value if none is provided |
 | `AUTO_INCREMENT` | Automatically increments numeric value |
 
+
+## Data Updating and Deleting
+
+### Updating a column
+
+will update soon...
