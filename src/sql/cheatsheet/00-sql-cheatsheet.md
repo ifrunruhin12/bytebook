@@ -158,8 +158,57 @@ INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
 | `AUTO_INCREMENT` | Automatically increments numeric value |
 
 
-## Data Updating and Deleting
+## 📝 UPDATE & DELETE in SQL (MySQL)
 
-### Updating a column
+### 🔄 `UPDATE` – Modify Existing Records
 
-will update soon...
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+#### ✅ Example:
+
+```sql
+-- Update a student's name where ID is 1
+UPDATE students
+SET name = 'Tanvir Ahmed'
+WHERE id = 1;
+```
+
+> ⚠️ Always use `WHERE` with `UPDATE` to avoid updating all rows!
+
+---
+
+### ❌ `DELETE` – Remove Records from a Table
+
+```sql
+DELETE FROM table_name
+WHERE condition;
+```
+
+#### ✅ Example:
+
+```sql
+-- Delete a student where ID is 3
+DELETE FROM students
+WHERE id = 3;
+```
+
+> ⚠️ `DELETE` without a `WHERE` clause removes all rows! Use carefully.
+
+---
+
+### 🧪 Pro Tips
+
+- 🔒 Always `SELECT` the rows first before doing an `UPDATE` or `DELETE`:
+  ```sql
+  SELECT * FROM students WHERE id = 1;
+  ```
+- 🧯 Use transactions if you're unsure:
+  ```sql
+  START TRANSACTION;
+  UPDATE students SET name = 'Test' WHERE id = 1;
+  ROLLBACK; -- or COMMIT;
+  ```
