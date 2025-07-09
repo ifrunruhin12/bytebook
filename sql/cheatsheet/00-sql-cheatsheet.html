@@ -295,9 +295,48 @@
 <tr><td><code>AUTO_INCREMENT</code></td><td>Automatically increments numeric value</td></tr>
 </tbody></table>
 </div>
-<h2 id="data-updating-and-deleting"><a class="header" href="#data-updating-and-deleting">Data Updating and Deleting</a></h2>
-<h3 id="updating-a-column"><a class="header" href="#updating-a-column">Updating a column</a></h3>
-<p>will update soon...</p>
+<h2 id="-update--delete-in-sql-mysql"><a class="header" href="#-update--delete-in-sql-mysql">📝 UPDATE &amp; DELETE in SQL (MySQL)</a></h2>
+<h3 id="-update--modify-existing-records"><a class="header" href="#-update--modify-existing-records">🔄 <code>UPDATE</code> – Modify Existing Records</a></h3>
+<pre><code class="language-sql">UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</code></pre>
+<h4 id="-example"><a class="header" href="#-example">✅ Example:</a></h4>
+<pre><code class="language-sql">-- Update a student's name where ID is 1
+UPDATE students
+SET name = 'Tanvir Ahmed'
+WHERE id = 1;
+</code></pre>
+<blockquote>
+<p>⚠️ Always use <code>WHERE</code> with <code>UPDATE</code> to avoid updating all rows!</p>
+</blockquote>
+<hr />
+<h3 id="-delete--remove-records-from-a-table"><a class="header" href="#-delete--remove-records-from-a-table">❌ <code>DELETE</code> – Remove Records from a Table</a></h3>
+<pre><code class="language-sql">DELETE FROM table_name
+WHERE condition;
+</code></pre>
+<h4 id="-example-1"><a class="header" href="#-example-1">✅ Example:</a></h4>
+<pre><code class="language-sql">-- Delete a student where ID is 3
+DELETE FROM students
+WHERE id = 3;
+</code></pre>
+<blockquote>
+<p>⚠️ <code>DELETE</code> without a <code>WHERE</code> clause removes all rows! Use carefully.</p>
+</blockquote>
+<hr />
+<h3 id="-pro-tips"><a class="header" href="#-pro-tips">🧪 Pro Tips</a></h3>
+<ul>
+<li>🔒 Always <code>SELECT</code> the rows first before doing an <code>UPDATE</code> or <code>DELETE</code>:
+<pre><code class="language-sql">SELECT * FROM students WHERE id = 1;
+</code></pre>
+</li>
+<li>🧯 Use transactions if you're unsure:
+<pre><code class="language-sql">START TRANSACTION;
+UPDATE students SET name = 'Test' WHERE id = 1;
+ROLLBACK; -- or COMMIT;
+</code></pre>
+</li>
+</ul>
 
                     </main>
 
