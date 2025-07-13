@@ -212,3 +212,78 @@ WHERE id = 3;
   UPDATE students SET name = 'Test' WHERE id = 1;
   ROLLBACK; -- or COMMIT;
   ```
+
+### 🔍 Basic Queries
+- Retrieve all columns: `SELECT * FROM table_name;`
+- Retrieve specific columns: `SELECT name, age FROM users;`
+- Filtering: `SELECT * FROM users WHERE age > 18;`
+- Sorting: `SELECT * FROM users ORDER BY name ASC;`
+- Limiting: `SELECT * FROM users LIMIT 5;`
+
+### 🧱 Creating a Simple Schema
+```sql
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    email VARCHAR(100) UNIQUE
+);
+```
+
+### 🧮 Functions & Aggregates
+- `COUNT(*)` – total rows
+- `AVG(column)` – average
+- `SUM(column)` – total sum
+- `MAX(column)` / `MIN(column)` – max/min values
+- `NOW()` – current datetime
+```sql
+SELECT COUNT(*) FROM users;
+SELECT AVG(age) FROM students;
+```
+
+### 🔗 JOINS
+- **INNER JOIN**: Only matching rows
+```sql
+SELECT * FROM orders
+INNER JOIN customers ON orders.customer_id = customers.id;
+```
+- **LEFT JOIN**: All from left + matched from right
+- **RIGHT JOIN**: All from right + matched from left
+
+### 🥚 Nested Queries
+```sql
+SELECT name FROM students
+WHERE id IN (
+    SELECT student_id FROM enrollments WHERE course_id = 1
+);
+```
+
+### 🧬 UNION
+- Combine result sets (must have same number of columns)
+```sql
+SELECT name FROM teachers
+UNION
+SELECT name FROM students;
+```
+
+### 🌟 Wildcards
+- `%` = any number of characters
+- `_` = a single character
+```sql
+SELECT * FROM users WHERE name LIKE 'A%';
+SELECT * FROM products WHERE code LIKE '_23%';
+```
+
+### 🔐 ON DELETE SET NULL / CASCADE
+```sql
+CREATE TABLE orders (
+    id INT PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    ON DELETE SET NULL
+);
+
+-- or
+ON DELETE CASCADE
+-- deletes all related orders when user is deleted
+```

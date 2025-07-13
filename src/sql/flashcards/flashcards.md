@@ -239,6 +239,211 @@ A Candidate Key that was not chosen as the Primary Key but is still unique and c
 ```
 ---
 
-👾 Keep these in mind when designing tables or answering DBMS interview questions.
+```
+🗂️  Question:
+What SQL statement is used to modify existing records in a table?
 
- *Add more as you go (e.g. JOINs, GROUP BY, subqueries, etc.). Keep cooking, dev sorcerer!*
+📦  Answer:
+UPDATE
+```
+
+---
+
+```
+🗂️  Question:
+What clause must you include with UPDATE to avoid changing all rows?
+
+📦  Answer:
+WHERE clause
+```
+
+---
+
+```
+🗂️  Question:
+What happens if you run UPDATE students SET name = 'Tanvir'; without WHERE?
+
+📦  Answer:
+It updates the name field for all rows in the students table.
+```
+
+---
+
+```
+🗂️  Question:
+What's the basic syntax of the UPDATE statement?
+
+📦  Answer:
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+---
+
+```
+🗂️  Question:
+How do you remove records from a table in SQL?
+
+📦  Answer:
+Using the DELETE statement
+```
+
+---
+
+```
+🗂️  Question:
+Write a SQL query to delete a student whose id is 5.
+
+📦  Answer:
+DELETE FROM students
+WHERE id = 5;
+```
+
+---
+
+```
+🗂️  Question:
+What happens if you run DELETE FROM students; without a WHERE clause?
+
+📦  Answer:
+It deletes all rows from the students table.
+```
+
+---
+
+```
+🗂️  Question:
+Which SQL keyword starts a transaction to safely test updates or deletes?
+
+📦  Answer:
+START TRANSACTION
+```
+
+---
+
+```
+🗂️  Question:
+What SQL command undoes changes made during a transaction?
+
+📦  Answer:
+ROLLBACK
+```
+
+---
+
+```
+🗂️  Question:
+What’s the safest practice before running UPDATE or DELETE?
+
+📦  Answer:
+Run a SELECT with the same WHERE clause to preview affected rows.
+```
+
+---
+
+```
+🗂️  Question:
+What does the wildcard % do in SQL?
+
+📦  Answer:
+Matches zero or more characters in a LIKE pattern.
+Example: 'A%' matches anything starting with A.
+```
+
+---
+
+```
+🗂️  Question:
+What’s the purpose of UNION in SQL?
+
+📦  Answer:
+Combines result sets from two SELECT queries into one, removing duplicates.
+```
+
+---
+
+```
+🗂️  Question:
+How does an INNER JOIN work?
+
+📦  Answer:
+Returns only the rows where there is a match in both joined tables.
+```
+
+---
+
+```
+🗂️  Question:
+What’s the difference between LEFT JOIN and RIGHT JOIN?
+
+📦  Answer:
+LEFT JOIN returns all rows from the left table and matched rows from the right.
+RIGHT JOIN does the opposite.
+```
+
+---
+
+```
+🗂️  Question:
+What does ON DELETE SET NULL do?
+
+📦  Answer:
+When a referenced row is deleted, it sets the foreign key column to NULL.
+```
+
+---
+
+```
+🗂️  Question:
+What does ON DELETE CASCADE do?
+
+📦  Answer:
+Automatically deletes rows in child table when the referenced row in parent table is deleted.
+```
+
+---
+
+```
+🗂️  Question:
+What’s a nested query (subquery)?
+
+📦  Answer:
+A query within another query, often used to filter or compute dynamic conditions.
+```
+
+---
+
+```
+🗂️  Question:
+What does COUNT(*) do in SQL?
+
+📦  Answer:
+Returns the total number of rows in a table.
+```
+
+---
+
+```
+🗂️  Question:
+How do you sort query results?
+
+📦  Answer:
+Using ORDER BY clause: ORDER BY column ASC/DESC;
+```
+
+---
+
+```
+🗂️  Question:
+How do you limit the number of rows in a result?
+
+📦  Answer:
+Using the LIMIT clause. Example: SELECT * FROM users LIMIT 10;
+```
+
+---
+
+
+
+👾 Keep these in mind when designing tables or answering DBMS interview questions.
