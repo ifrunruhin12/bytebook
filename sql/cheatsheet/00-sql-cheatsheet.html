@@ -337,6 +337,78 @@ ROLLBACK; -- or COMMIT;
 </code></pre>
 </li>
 </ul>
+<h3 id="-basic-queries"><a class="header" href="#-basic-queries">🔍 Basic Queries</a></h3>
+<ul>
+<li>Retrieve all columns: <code>SELECT * FROM table_name;</code></li>
+<li>Retrieve specific columns: <code>SELECT name, age FROM users;</code></li>
+<li>Filtering: <code>SELECT * FROM users WHERE age &gt; 18;</code></li>
+<li>Sorting: <code>SELECT * FROM users ORDER BY name ASC;</code></li>
+<li>Limiting: <code>SELECT * FROM users LIMIT 5;</code></li>
+</ul>
+<h3 id="-creating-a-simple-schema"><a class="header" href="#-creating-a-simple-schema">🧱 Creating a Simple Schema</a></h3>
+<pre><code class="language-sql">CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    email VARCHAR(100) UNIQUE
+);
+</code></pre>
+<h3 id="-functions--aggregates"><a class="header" href="#-functions--aggregates">🧮 Functions &amp; Aggregates</a></h3>
+<ul>
+<li><code>COUNT(*)</code> – total rows</li>
+<li><code>AVG(column)</code> – average</li>
+<li><code>SUM(column)</code> – total sum</li>
+<li><code>MAX(column)</code> / <code>MIN(column)</code> – max/min values</li>
+<li><code>NOW()</code> – current datetime</li>
+</ul>
+<pre><code class="language-sql">SELECT COUNT(*) FROM users;
+SELECT AVG(age) FROM students;
+</code></pre>
+<h3 id="-joins"><a class="header" href="#-joins">🔗 JOINS</a></h3>
+<ul>
+<li><strong>INNER JOIN</strong>: Only matching rows</li>
+</ul>
+<pre><code class="language-sql">SELECT * FROM orders
+INNER JOIN customers ON orders.customer_id = customers.id;
+</code></pre>
+<ul>
+<li><strong>LEFT JOIN</strong>: All from left + matched from right</li>
+<li><strong>RIGHT JOIN</strong>: All from right + matched from left</li>
+</ul>
+<h3 id="-nested-queries"><a class="header" href="#-nested-queries">🥚 Nested Queries</a></h3>
+<pre><code class="language-sql">SELECT name FROM students
+WHERE id IN (
+    SELECT student_id FROM enrollments WHERE course_id = 1
+);
+</code></pre>
+<h3 id="-union"><a class="header" href="#-union">🧬 UNION</a></h3>
+<ul>
+<li>Combine result sets (must have same number of columns)</li>
+</ul>
+<pre><code class="language-sql">SELECT name FROM teachers
+UNION
+SELECT name FROM students;
+</code></pre>
+<h3 id="-wildcards"><a class="header" href="#-wildcards">🌟 Wildcards</a></h3>
+<ul>
+<li><code>%</code> = any number of characters</li>
+<li><code>_</code> = a single character</li>
+</ul>
+<pre><code class="language-sql">SELECT * FROM users WHERE name LIKE 'A%';
+SELECT * FROM products WHERE code LIKE '_23%';
+</code></pre>
+<h3 id="-on-delete-set-null--cascade"><a class="header" href="#-on-delete-set-null--cascade">🔐 ON DELETE SET NULL / CASCADE</a></h3>
+<pre><code class="language-sql">CREATE TABLE orders (
+    id INT PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    ON DELETE SET NULL
+);
+
+-- or
+ON DELETE CASCADE
+-- deletes all related orders when user is deleted
+</code></pre>
 
                     </main>
 

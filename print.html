@@ -3390,6 +3390,78 @@ ROLLBACK; -- or COMMIT;
 </code></pre>
 </li>
 </ul>
+<h3 id="-basic-queries"><a class="header" href="#-basic-queries">🔍 Basic Queries</a></h3>
+<ul>
+<li>Retrieve all columns: <code>SELECT * FROM table_name;</code></li>
+<li>Retrieve specific columns: <code>SELECT name, age FROM users;</code></li>
+<li>Filtering: <code>SELECT * FROM users WHERE age &gt; 18;</code></li>
+<li>Sorting: <code>SELECT * FROM users ORDER BY name ASC;</code></li>
+<li>Limiting: <code>SELECT * FROM users LIMIT 5;</code></li>
+</ul>
+<h3 id="-creating-a-simple-schema"><a class="header" href="#-creating-a-simple-schema">🧱 Creating a Simple Schema</a></h3>
+<pre><code class="language-sql">CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    email VARCHAR(100) UNIQUE
+);
+</code></pre>
+<h3 id="-functions--aggregates"><a class="header" href="#-functions--aggregates">🧮 Functions &amp; Aggregates</a></h3>
+<ul>
+<li><code>COUNT(*)</code> – total rows</li>
+<li><code>AVG(column)</code> – average</li>
+<li><code>SUM(column)</code> – total sum</li>
+<li><code>MAX(column)</code> / <code>MIN(column)</code> – max/min values</li>
+<li><code>NOW()</code> – current datetime</li>
+</ul>
+<pre><code class="language-sql">SELECT COUNT(*) FROM users;
+SELECT AVG(age) FROM students;
+</code></pre>
+<h3 id="-joins"><a class="header" href="#-joins">🔗 JOINS</a></h3>
+<ul>
+<li><strong>INNER JOIN</strong>: Only matching rows</li>
+</ul>
+<pre><code class="language-sql">SELECT * FROM orders
+INNER JOIN customers ON orders.customer_id = customers.id;
+</code></pre>
+<ul>
+<li><strong>LEFT JOIN</strong>: All from left + matched from right</li>
+<li><strong>RIGHT JOIN</strong>: All from right + matched from left</li>
+</ul>
+<h3 id="-nested-queries"><a class="header" href="#-nested-queries">🥚 Nested Queries</a></h3>
+<pre><code class="language-sql">SELECT name FROM students
+WHERE id IN (
+    SELECT student_id FROM enrollments WHERE course_id = 1
+);
+</code></pre>
+<h3 id="-union"><a class="header" href="#-union">🧬 UNION</a></h3>
+<ul>
+<li>Combine result sets (must have same number of columns)</li>
+</ul>
+<pre><code class="language-sql">SELECT name FROM teachers
+UNION
+SELECT name FROM students;
+</code></pre>
+<h3 id="-wildcards"><a class="header" href="#-wildcards">🌟 Wildcards</a></h3>
+<ul>
+<li><code>%</code> = any number of characters</li>
+<li><code>_</code> = a single character</li>
+</ul>
+<pre><code class="language-sql">SELECT * FROM users WHERE name LIKE 'A%';
+SELECT * FROM products WHERE code LIKE '_23%';
+</code></pre>
+<h3 id="-on-delete-set-null--cascade"><a class="header" href="#-on-delete-set-null--cascade">🔐 ON DELETE SET NULL / CASCADE</a></h3>
+<pre><code class="language-sql">CREATE TABLE orders (
+    id INT PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    ON DELETE SET NULL
+);
+
+-- or
+ON DELETE CASCADE
+-- deletes all related orders when user is deleted
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-sql-flashcards--cli-edition"><a class="header" href="#-sql-flashcards--cli-edition">🧠 SQL Flashcards — CLI Edition</a></h1>
 <blockquote>
 <p>Use these to review quickly in a terminal-like format. Keep adding as you level up!</p>
@@ -3565,8 +3637,152 @@ What is an Alternate Key?
 A Candidate Key that was not chosen as the Primary Key but is still unique and can identify rows.
 </code></pre>
 <hr />
+<pre><code>🗂️  Question:
+What SQL statement is used to modify existing records in a table?
+
+📦  Answer:
+UPDATE
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What clause must you include with UPDATE to avoid changing all rows?
+
+📦  Answer:
+WHERE clause
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What happens if you run UPDATE students SET name = 'Tanvir'; without WHERE?
+
+📦  Answer:
+It updates the name field for all rows in the students table.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What's the basic syntax of the UPDATE statement?
+
+📦  Answer:
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+How do you remove records from a table in SQL?
+
+📦  Answer:
+Using the DELETE statement
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+Write a SQL query to delete a student whose id is 5.
+
+📦  Answer:
+DELETE FROM students
+WHERE id = 5;
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What happens if you run DELETE FROM students; without a WHERE clause?
+
+📦  Answer:
+It deletes all rows from the students table.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+Which SQL keyword starts a transaction to safely test updates or deletes?
+
+📦  Answer:
+START TRANSACTION
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What SQL command undoes changes made during a transaction?
+
+📦  Answer:
+ROLLBACK
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What’s the safest practice before running UPDATE or DELETE?
+
+📦  Answer:
+Run a SELECT with the same WHERE clause to preview affected rows.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What does the wildcard % do in SQL?
+
+📦  Answer:
+Matches zero or more characters in a LIKE pattern.
+Example: 'A%' matches anything starting with A.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What’s the purpose of UNION in SQL?
+
+📦  Answer:
+Combines result sets from two SELECT queries into one, removing duplicates.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+How does an INNER JOIN work?
+
+📦  Answer:
+Returns only the rows where there is a match in both joined tables.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What’s the difference between LEFT JOIN and RIGHT JOIN?
+
+📦  Answer:
+LEFT JOIN returns all rows from the left table and matched rows from the right.
+RIGHT JOIN does the opposite.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What does ON DELETE SET NULL do?
+
+📦  Answer:
+When a referenced row is deleted, it sets the foreign key column to NULL.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What does ON DELETE CASCADE do?
+
+📦  Answer:
+Automatically deletes rows in child table when the referenced row in parent table is deleted.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What’s a nested query (subquery)?
+
+📦  Answer:
+A query within another query, often used to filter or compute dynamic conditions.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+What does COUNT(*) do in SQL?
+
+📦  Answer:
+Returns the total number of rows in a table.
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+How do you sort query results?
+
+📦  Answer:
+Using ORDER BY clause: ORDER BY column ASC/DESC;
+</code></pre>
+<hr />
+<pre><code>🗂️  Question:
+How do you limit the number of rows in a result?
+
+📦  Answer:
+Using the LIMIT clause. Example: SELECT * FROM users LIMIT 10;
+</code></pre>
+<hr />
 <p>👾 Keep these in mind when designing tables or answering DBMS interview questions.</p>
-<p><em>Add more as you go (e.g. JOINs, GROUP BY, subqueries, etc.). Keep cooking, dev sorcerer!</em></p>
 
                     </main>
 
