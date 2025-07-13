@@ -158,3 +158,234 @@ INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
 | `DEFAULT`        | Sets default value if none is provided |
 | `AUTO_INCREMENT` | Automatically increments numeric value |
 
+
+## 📝 UPDATE & DELETE in SQL (MySQL)
+
+### 🔄 `UPDATE` – Modify Existing Records
+
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+#### ✅ Example:
+
+```sql
+-- Update a student's name where ID is 1
+UPDATE students
+SET name = 'Tanvir Ahmed'
+WHERE id = 1;
+```
+
+> ⚠️ Always use `WHERE` with `UPDATE` to avoid updating all rows!
+
+---
+
+### ❌ `DELETE` – Remove Records from a Table
+
+```sql
+DELETE FROM table_name
+WHERE condition;
+```
+
+#### ✅ Example:
+
+```sql
+-- Delete a student where ID is 3
+DELETE FROM students
+WHERE id = 3;
+```
+
+> ⚠️ `DELETE` without a `WHERE` clause removes all rows! Use carefully.
+
+---
+
+### 🧪 Pro Tips
+
+- 🔒 Always `SELECT` the rows first before doing an `UPDATE` or `DELETE`:
+  ```sql
+  SELECT * FROM students WHERE id = 1;
+  ```
+- 🧯 Use transactions if you're unsure:
+  ```sql
+  START TRANSACTION;
+  UPDATE students SET name = 'Test' WHERE id = 1;
+  ROLLBACK; -- or COMMIT;
+  ```
+
+### 🔍 Basic Queries
+- Retrieve all columns: `SELECT * FROM table_name;`
+- Retrieve specific columns: `SELECT name, age FROM users;`
+- Filtering: `SELECT * FROM users WHERE age > 18;`
+- Sorting: `SELECT * FROM users ORDER BY name ASC;`
+- Limiting: `SELECT * FROM users LIMIT 5;`
+
+### 🧱 Creating a Simple Schema
+```sql
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    email VARCHAR(100) UNIQUE
+);
+```
+
+### 🧮 Functions & Aggregates
+- `COUNT(*)` – total rows
+- `AVG(column)` – average
+- `SUM(column)` – total sum
+- `MAX(column)` / `MIN(column)` – max/min values
+- `NOW()` – current datetime
+```sql
+SELECT COUNT(*) FROM users;
+SELECT AVG(age) FROM students;
+```
+
+### 🔗 JOINS
+- **INNER JOIN**: Only matching rows
+```sql
+SELECT * FROM orders
+INNER JOIN customers ON orders.customer_id = customers.id;
+```
+- **LEFT JOIN**: All from left + matched from right
+- **RIGHT JOIN**: All from right + matched from left
+
+### 🥚 Nested Queries
+```sql
+SELECT name FROM students
+WHERE id IN (
+    SELECT student_id FROM enrollments WHERE course_id = 1
+);
+```
+
+### 🧬 UNION
+- Combine result sets (must have same number of columns)
+```sql
+SELECT name FROM teachers
+UNION
+SELECT name FROM students;
+```
+
+### 🌟 Wildcards
+- `%` = any number of characters
+- `_` = a single character
+```sql
+SELECT * FROM users WHERE name LIKE 'A%';
+SELECT * FROM products WHERE code LIKE '_23%';
+```
+
+### 🔐 ON DELETE SET NULL / CASCADE
+```sql
+CREATE TABLE orders (
+    id INT PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    ON DELETE SET NULL
+);
+
+-- or
+ON DELETE CASCADE
+-- deletes all related orders when user is deleted
+```
+## 📘 Advanced SQL & Database Design Concepts
+
+## 🧩 DELIMITER in SQL
+
+By default, SQL statements end with a semicolon `;`. But when writing complex statements like **stored procedures** or **triggers**, we temporarily change the delimiter to avoid premature termination.
+
+### 🔧 Usage:
+```sql
+DELIMITER $$
+
+CREATE PROCEDURE example_proc()
+BEGIN
+    -- Multiple SQL statements
+    SELECT "Hello";
+    SELECT "World";
+END $$
+
+DELIMITER ;
+```
+
+> `DELIMITER $$` tells the MySQL interpreter to treat `$$` as the end of the command block instead of `;`. This is useful for functions, procedures, and triggers.
+
+---
+
+## ⚡ Triggers
+
+Triggers are special stored procedures that **automatically run** in response to specific events on a table.
+
+### 🧠 Types of Triggers:
+- `BEFORE INSERT`
+- `AFTER INSERT`
+- `BEFORE UPDATE`
+- `AFTER UPDATE`
+- `BEFORE DELETE`
+- `AFTER DELETE`
+
+### ✅ Syntax:
+```sql
+DELIMITER $$
+
+CREATE TRIGGER before_insert_user
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    SET NEW.created_at = NOW();
+END $$
+
+DELIMITER ;
+```
+
+> `NEW` and `OLD` are special keywords to access values during trigger execution.
+
+---
+
+## 🧬 ER Diagrams (Entity-Relationship Diagrams)
+
+ER diagrams visually represent how **entities** (tables) relate to one another in a database.
+
+### 🧱 Key Concepts:
+
+#### 🧾 Entities:
+- Represent **real-world objects** (e.g., Student, Course).
+- Become tables in the database.
+
+#### 🔑 Attributes:
+- Properties of an entity (e.g., name, age, ID).
+- Types:
+  - **Simple Attribute**: Cannot be divided (e.g., age).
+  - **Composite Attribute**: Can be divided (e.g., name → first, last).
+  - **Derived Attribute**: Computed (e.g., age from DOB).
+  - **Multivalued Attribute**: Has multiple values (e.g., phone numbers).
+
+#### 🔗 Relationships:
+- Connects two or more entities.
+- Cardinality types:
+  - One-to-One
+  - One-to-Many
+  - Many-to-Many
+
+#### 🧩 Keys:
+- **Primary Key**: Uniquely identifies a record.
+- **Foreign Key**: Creates a link between tables.
+
+#### 🔄 Participation:
+- **Total Participation**: Every entity must participate in a relationship.
+- **Partial Participation**: Optional participation.
+
+---
+
+## 🔖 Example ER Scenario:
+
+**Entities**: Student, Course, Enrollment  
+**Relations**:
+- A `Student` can enroll in multiple `Courses`.
+- A `Course` can have many `Students`.
+
+This forms a **many-to-many** relationship, usually resolved with an intermediate **Enrollment** table.
+
+---
+
+> ER diagrams help with planning, normalization, and identifying relationships before creating the schema.
