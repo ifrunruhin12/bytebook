@@ -409,6 +409,106 @@ SELECT * FROM products WHERE code LIKE '_23%';
 ON DELETE CASCADE
 -- deletes all related orders when user is deleted
 </code></pre>
+<h2 id="-advanced-sql--database-design-concepts"><a class="header" href="#-advanced-sql--database-design-concepts">📘 Advanced SQL &amp; Database Design Concepts</a></h2>
+<h2 id="-delimiter-in-sql"><a class="header" href="#-delimiter-in-sql">🧩 DELIMITER in SQL</a></h2>
+<p>By default, SQL statements end with a semicolon <code>;</code>. But when writing complex statements like <strong>stored procedures</strong> or <strong>triggers</strong>, we temporarily change the delimiter to avoid premature termination.</p>
+<h3 id="-usage"><a class="header" href="#-usage">🔧 Usage:</a></h3>
+<pre><code class="language-sql">DELIMITER $$
+
+CREATE PROCEDURE example_proc()
+BEGIN
+    -- Multiple SQL statements
+    SELECT "Hello";
+    SELECT "World";
+END $$
+
+DELIMITER ;
+</code></pre>
+<blockquote>
+<p><code>DELIMITER $$</code> tells the MySQL interpreter to treat <code>$$</code> as the end of the command block instead of <code>;</code>. This is useful for functions, procedures, and triggers.</p>
+</blockquote>
+<hr />
+<h2 id="-triggers"><a class="header" href="#-triggers">⚡ Triggers</a></h2>
+<p>Triggers are special stored procedures that <strong>automatically run</strong> in response to specific events on a table.</p>
+<h3 id="-types-of-triggers"><a class="header" href="#-types-of-triggers">🧠 Types of Triggers:</a></h3>
+<ul>
+<li><code>BEFORE INSERT</code></li>
+<li><code>AFTER INSERT</code></li>
+<li><code>BEFORE UPDATE</code></li>
+<li><code>AFTER UPDATE</code></li>
+<li><code>BEFORE DELETE</code></li>
+<li><code>AFTER DELETE</code></li>
+</ul>
+<h3 id="-syntax"><a class="header" href="#-syntax">✅ Syntax:</a></h3>
+<pre><code class="language-sql">DELIMITER $$
+
+CREATE TRIGGER before_insert_user
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    SET NEW.created_at = NOW();
+END $$
+
+DELIMITER ;
+</code></pre>
+<blockquote>
+<p><code>NEW</code> and <code>OLD</code> are special keywords to access values during trigger execution.</p>
+</blockquote>
+<hr />
+<h2 id="-er-diagrams-entity-relationship-diagrams"><a class="header" href="#-er-diagrams-entity-relationship-diagrams">🧬 ER Diagrams (Entity-Relationship Diagrams)</a></h2>
+<p>ER diagrams visually represent how <strong>entities</strong> (tables) relate to one another in a database.</p>
+<h3 id="-key-concepts"><a class="header" href="#-key-concepts">🧱 Key Concepts:</a></h3>
+<h4 id="-entities"><a class="header" href="#-entities">🧾 Entities:</a></h4>
+<ul>
+<li>Represent <strong>real-world objects</strong> (e.g., Student, Course).</li>
+<li>Become tables in the database.</li>
+</ul>
+<h4 id="-attributes"><a class="header" href="#-attributes">🔑 Attributes:</a></h4>
+<ul>
+<li>Properties of an entity (e.g., name, age, ID).</li>
+<li>Types:
+<ul>
+<li><strong>Simple Attribute</strong>: Cannot be divided (e.g., age).</li>
+<li><strong>Composite Attribute</strong>: Can be divided (e.g., name → first, last).</li>
+<li><strong>Derived Attribute</strong>: Computed (e.g., age from DOB).</li>
+<li><strong>Multivalued Attribute</strong>: Has multiple values (e.g., phone numbers).</li>
+</ul>
+</li>
+</ul>
+<h4 id="-relationships"><a class="header" href="#-relationships">🔗 Relationships:</a></h4>
+<ul>
+<li>Connects two or more entities.</li>
+<li>Cardinality types:
+<ul>
+<li>One-to-One</li>
+<li>One-to-Many</li>
+<li>Many-to-Many</li>
+</ul>
+</li>
+</ul>
+<h4 id="-keys"><a class="header" href="#-keys">🧩 Keys:</a></h4>
+<ul>
+<li><strong>Primary Key</strong>: Uniquely identifies a record.</li>
+<li><strong>Foreign Key</strong>: Creates a link between tables.</li>
+</ul>
+<h4 id="-participation"><a class="header" href="#-participation">🔄 Participation:</a></h4>
+<ul>
+<li><strong>Total Participation</strong>: Every entity must participate in a relationship.</li>
+<li><strong>Partial Participation</strong>: Optional participation.</li>
+</ul>
+<hr />
+<h2 id="-example-er-scenario"><a class="header" href="#-example-er-scenario">🔖 Example ER Scenario:</a></h2>
+<p><strong>Entities</strong>: Student, Course, Enrollment<br />
+<strong>Relations</strong>:</p>
+<ul>
+<li>A <code>Student</code> can enroll in multiple <code>Courses</code>.</li>
+<li>A <code>Course</code> can have many <code>Students</code>.</li>
+</ul>
+<p>This forms a <strong>many-to-many</strong> relationship, usually resolved with an intermediate <strong>Enrollment</strong> table.</p>
+<hr />
+<blockquote>
+<p>ER diagrams help with planning, normalization, and identifying relationships before creating the schema.</p>
+</blockquote>
 
                     </main>
 
