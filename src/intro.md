@@ -20,7 +20,8 @@ Organized by language, concept, and chaos-resistance.
   - 📁 Common code snippets and setup scripts  
   - Shell templates, project boilerplates, and productivity hacks  
 
-🦀 Rust *(coming soon)*  
+🦀 Rust
+  - [📁 View Rust Notes and Learning Path](rust/intro.md)
   - Ownership, lifetimes, async, and zero-cost abstractions  
 
 🐍 Python *(coming soon)*  

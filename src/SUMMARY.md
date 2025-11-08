@@ -34,3 +34,9 @@
   - [SQL Cheatsheet](sql/cheatsheet/00-sql-cheatsheet.md)
   - [Flash cards](sql/flashcards/flashcards.md)
 
+- [Rust](rust/intro.md)
+  - [Chapter 1 — Getting Started](rust/chapter-01-getting-started.md)
+  - [Chapter 2 — Programming a Guessing Game](rust/chapter-02-guessing-game.md)
+  - [Chapter 3 — Common Programming Concepts](rust/chapter-03-common-concepts.md)
+  - [Chapter 4 — Understanding Ownership](rust/chapter-04-ownership.md)
+

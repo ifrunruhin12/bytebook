@@ -1,6 +1,24 @@
 [book]
-authors = []
+authors = ["bytebook"]
 language = "en"
 multilingual = false
 src = "src"
 title = "bytebook"
+description = "A living notebook documenting my journey through Golang, Rust, SQL, and other programming languages — organized notes, experiments, and practical examples."
+
+[output.html]
+default-theme = "navy"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/yourusername/bytebook"
+git-repository-icon = "fa-github"
+additional-css = ["theme/css/custom.css"]
+additional-js = ["theme/js/custom.js"]
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.playground]
+editable = true
+copyable = true
+line-numbers = true
