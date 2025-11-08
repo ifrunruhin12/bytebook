@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="navy" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 
         <!-- Custom HTML head -->
         
-        <meta name="description" content="">
+        <meta name="description" content="A living notebook documenting my journey through Golang, Rust, SQL, and other programming languages — organized notes, experiments, and practical examples.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/css/custom.css">
 
     </head>
     <body class="sidebar-visible no-js">
@@ -37,7 +38,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +63,7 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('light')
+            html.classList.remove('navy')
             html.classList.add(theme);
             var body = document.querySelector('body');
             body.classList.remove('no-js')
@@ -89,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="golang/intro.html"><strong aria-hidden="true">2.</strong> Golang</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/go-with-habib-class-notes.html"><strong aria-hidden="true">2.1.</strong> Go With Habib Class Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-0-go-basics.html"><strong aria-hidden="true">2.1.1.</strong> Go Basics</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-16-package-scope.html"><strong aria-hidden="true">2.1.2.</strong> Class 16 - Package Scope</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-17-scope-example.html"><strong aria-hidden="true">2.1.3.</strong> Class 17 - Scope Example</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-18-variable-shadowing.html"><strong aria-hidden="true">2.1.4.</strong> Class 18 - Variable Shadowing</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-19-function-types.html"><strong aria-hidden="true">2.1.5.</strong> Class 19 - Function Types</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-20-init-function.html"><strong aria-hidden="true">2.1.6.</strong> Class 20 - Init Function</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-21-anonymous-func-and-iife.html"><strong aria-hidden="true">2.1.7.</strong> Class 21 - Anonymous Functions and IIFE</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-22-function-expression-example.html"><strong aria-hidden="true">2.1.8.</strong> Class 22 - Function Expression Example</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-23-fof-vs-hof.html"><strong aria-hidden="true">2.1.9.</strong> Class 23 - Function of Function vs Higher Order Function</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-24-internal-memory.html"><strong aria-hidden="true">2.1.10.</strong> Class 24 - Internal Memory</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-25-end-of-internal-memory.html"><strong aria-hidden="true">2.1.11.</strong> Class 25 - End of Internal Memory</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-26-closure.html"><strong aria-hidden="true">2.1.12.</strong> Class 26 - Closure</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-27-struct.html"><strong aria-hidden="true">2.1.13.</strong> Class 27 - Struct</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-28-receiver-function.html"><strong aria-hidden="true">2.1.14.</strong> Class 28 - Receiver Function</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-29-array.html"><strong aria-hidden="true">2.1.15.</strong> Class 29 - Array</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-30-pointers.html"><strong aria-hidden="true">2.1.16.</strong> Class 30 - Pointers</a></li><li class="chapter-item expanded "><a href="golang/go-with-habib-class-notes/class-31-slices.html"><strong aria-hidden="true">2.1.17.</strong> Class 31 - Slices</a></li></ol></li><li class="chapter-item expanded "><a href="golang/experiment/experiments.html"><strong aria-hidden="true">2.2.</strong> Experiments</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="golang/experiment/blank-identifier.html"><strong aria-hidden="true">2.2.1.</strong> Blank Identifier</a></li><li class="chapter-item expanded "><a href="golang/experiment/init-function.html"><strong aria-hidden="true">2.2.2.</strong> Init Function</a></li><li class="chapter-item expanded "><a href="golang/experiment/partial-redeclaration.html"><strong aria-hidden="true">2.2.3.</strong> Partial Declaration</a></li><li class="chapter-item expanded "><a href="golang/experiment/pointer-experiment.html"><strong aria-hidden="true">2.2.4.</strong> Pointer Experiment</a></li><li class="chapter-item expanded "><a href="golang/experiment/slice-capacity.html"><strong aria-hidden="true">2.2.5.</strong> Slice Capacity testing</a></li><li class="chapter-item expanded "><a href="golang/experiment/io-methods-golang.html"><strong aria-hidden="true">2.2.6.</strong> I/O methods in Golang</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="sql/intro.html"><strong aria-hidden="true">3.</strong> SQL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sql/cheatsheet/00-sql-cheatsheet.html"><strong aria-hidden="true">3.1.</strong> SQL Cheatsheet</a></li><li class="chapter-item expanded "><a href="sql/flashcards/flashcards.html"><strong aria-hidden="true">3.2.</strong> Flash cards</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item "><a href="golang/intro.html"><strong aria-hidden="true">2.</strong> Golang</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="golang/go-with-habib-class-notes/go-with-habib-class-notes.html"><strong aria-hidden="true">2.1.</strong> Go With Habib Class Notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-0-go-basics.html"><strong aria-hidden="true">2.1.1.</strong> Go Basics</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-16-package-scope.html"><strong aria-hidden="true">2.1.2.</strong> Class 16 - Package Scope</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-17-scope-example.html"><strong aria-hidden="true">2.1.3.</strong> Class 17 - Scope Example</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-18-variable-shadowing.html"><strong aria-hidden="true">2.1.4.</strong> Class 18 - Variable Shadowing</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-19-function-types.html"><strong aria-hidden="true">2.1.5.</strong> Class 19 - Function Types</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-20-init-function.html"><strong aria-hidden="true">2.1.6.</strong> Class 20 - Init Function</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-21-anonymous-func-and-iife.html"><strong aria-hidden="true">2.1.7.</strong> Class 21 - Anonymous Functions and IIFE</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-22-function-expression-example.html"><strong aria-hidden="true">2.1.8.</strong> Class 22 - Function Expression Example</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-23-fof-vs-hof.html"><strong aria-hidden="true">2.1.9.</strong> Class 23 - Function of Function vs Higher Order Function</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-24-internal-memory.html"><strong aria-hidden="true">2.1.10.</strong> Class 24 - Internal Memory</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-25-end-of-internal-memory.html"><strong aria-hidden="true">2.1.11.</strong> Class 25 - End of Internal Memory</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-26-closure.html"><strong aria-hidden="true">2.1.12.</strong> Class 26 - Closure</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-27-struct.html"><strong aria-hidden="true">2.1.13.</strong> Class 27 - Struct</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-28-receiver-function.html"><strong aria-hidden="true">2.1.14.</strong> Class 28 - Receiver Function</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-29-array.html"><strong aria-hidden="true">2.1.15.</strong> Class 29 - Array</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-30-pointers.html"><strong aria-hidden="true">2.1.16.</strong> Class 30 - Pointers</a></li><li class="chapter-item "><a href="golang/go-with-habib-class-notes/class-31-slices.html"><strong aria-hidden="true">2.1.17.</strong> Class 31 - Slices</a></li></ol></li><li class="chapter-item "><a href="golang/experiment/experiments.html"><strong aria-hidden="true">2.2.</strong> Experiments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="golang/experiment/blank-identifier.html"><strong aria-hidden="true">2.2.1.</strong> Blank Identifier</a></li><li class="chapter-item "><a href="golang/experiment/init-function.html"><strong aria-hidden="true">2.2.2.</strong> Init Function</a></li><li class="chapter-item "><a href="golang/experiment/partial-redeclaration.html"><strong aria-hidden="true">2.2.3.</strong> Partial Declaration</a></li><li class="chapter-item "><a href="golang/experiment/pointer-experiment.html"><strong aria-hidden="true">2.2.4.</strong> Pointer Experiment</a></li><li class="chapter-item "><a href="golang/experiment/slice-capacity.html"><strong aria-hidden="true">2.2.5.</strong> Slice Capacity testing</a></li><li class="chapter-item "><a href="golang/experiment/io-methods-golang.html"><strong aria-hidden="true">2.2.6.</strong> I/O methods in Golang</a></li></ol></li></ol></li><li class="chapter-item "><a href="sql/intro.html"><strong aria-hidden="true">3.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="sql/cheatsheet/00-sql-cheatsheet.html"><strong aria-hidden="true">3.1.</strong> SQL Cheatsheet</a></li><li class="chapter-item "><a href="sql/flashcards/flashcards.html"><strong aria-hidden="true">3.2.</strong> Flash cards</a></li></ol></li><li class="chapter-item "><a href="rust/intro.html"><strong aria-hidden="true">4.</strong> Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="rust/chapter-01-getting-started.html"><strong aria-hidden="true">4.1.</strong> Chapter 1 — Getting Started</a></li><li class="chapter-item "><a href="rust/chapter-02-guessing-game.html"><strong aria-hidden="true">4.2.</strong> Chapter 2 — Programming a Guessing Game</a></li><li class="chapter-item "><a href="rust/chapter-03-common-concepts.html"><strong aria-hidden="true">4.3.</strong> Chapter 3 — Common Programming Concepts</a></li><li class="chapter-item "><a href="rust/chapter-04-ownership.html"><strong aria-hidden="true">4.4.</strong> Chapter 4 — Understanding Ownership</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -148,6 +149,9 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        <a href="https://github.com/yourusername/bytebook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
 
                     </div>
                 </div>
@@ -196,8 +200,9 @@
 <li>📁 Common code snippets and setup scripts</li>
 <li>Shell templates, project boilerplates, and productivity hacks</li>
 </ul>
-<p>🦀 Rust <em>(coming soon)</em></p>
+<p>🦀 Rust</p>
 <ul>
+<li><a href="rust/intro.html">📁 View Rust Notes and Learning Path</a></li>
 <li>Ownership, lifetimes, async, and zero-cost abstractions</li>
 </ul>
 <p>🐍 Python <em>(coming soon)</em></p>
@@ -3883,6 +3888,669 @@ Using the LIMIT clause. Example: SELECT * FROM users LIMIT 10;
 </code></pre>
 <hr />
 <p>👾 Keep these in mind when designing tables or answering DBMS interview questions.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-rust-learning-journey"><a class="header" href="#-rust-learning-journey">🦀 Rust Learning Journey</a></h1>
+<p>Welcome to my Rust knowledge hub — documenting my journey through <strong>"The Rust Programming Language"</strong> (TRPL) book as I explore systems programming, memory safety, and the power of Rust 🚀</p>
+<hr />
+<h2 id="-learning-approach"><a class="header" href="#-learning-approach">📖 Learning Approach</a></h2>
+<p>I'm following the official <a href="https://doc.rust-lang.org/book/"><strong>The Rust Programming Language</strong></a> book (affectionately known as "The Book") to build a solid foundation in Rust. This section contains my notes, code examples, and key takeaways from each chapter.</p>
+<hr />
+<h2 id="-current-progress"><a class="header" href="#-current-progress">📊 Current Progress</a></h2>
+<p><strong>Chapters Completed</strong>: 1-4 (Getting Started → Understanding Ownership)</p>
+<p>✅ Chapter 1 — Getting Started<br />
+✅ Chapter 2 — Programming a Guessing Game<br />
+✅ Chapter 3 — Common Programming Concepts<br />
+✅ Chapter 4 — Understanding Ownership</p>
+<hr />
+<h2 id="-chapter-overview"><a class="header" href="#-chapter-overview">📚 Chapter Overview</a></h2>
+<h3 id="-chapter-1--getting-started"><a class="header" href="#-chapter-1--getting-started">🚀 <a href="rust/chapter-01-getting-started.html">Chapter 1 — Getting Started</a></a></h3>
+<p>Installation, Hello World, and introduction to Cargo — Rust's build system and package manager.</p>
+<h3 id="-chapter-2--programming-a-guessing-game"><a class="header" href="#-chapter-2--programming-a-guessing-game">🎲 <a href="rust/chapter-02-guessing-game.html">Chapter 2 — Programming a Guessing Game</a></a></h3>
+<p>A hands-on tutorial building a guessing game. Covers variables, user input, external crates, and match expressions.</p>
+<h3 id="-chapter-3--common-programming-concepts"><a class="header" href="#-chapter-3--common-programming-concepts">🧩 <a href="rust/chapter-03-common-concepts.html">Chapter 3 — Common Programming Concepts</a></a></h3>
+<p>Fundamental programming concepts in Rust: variables, data types, functions, comments, and control flow.</p>
+<h3 id="-chapter-4--understanding-ownership"><a class="header" href="#-chapter-4--understanding-ownership">🔐 <a href="rust/chapter-04-ownership.html">Chapter 4 — Understanding Ownership</a></a></h3>
+<p>Rust's most unique feature — the ownership system. Learn about borrowing, references, and how Rust achieves memory safety without garbage collection.</p>
+<hr />
+<h2 id="-why-rust"><a class="header" href="#-why-rust">🎯 Why Rust?</a></h2>
+<p>Rust is a systems programming language that offers:</p>
+<ul>
+<li><strong>Memory Safety</strong> without garbage collection</li>
+<li><strong>Concurrency</strong> without data races</li>
+<li><strong>Performance</strong> comparable to C/C++</li>
+<li><strong>Modern tooling</strong> and excellent error messages</li>
+</ul>
+<p>I'm learning Rust to build <strong>Jagoron</strong> — a modern phonetic engine for the Bengali language, envisioned as a better successor to the Avro phonetic engine.</p>
+<hr />
+<h2 id="-official-resources"><a class="header" href="#-official-resources">🔗 Official Resources</a></h2>
+<ul>
+<li>📘 <a href="https://doc.rust-lang.org/book/">The Rust Programming Language Book</a></li>
+<li>🦀 <a href="https://www.rust-lang.org/">Rust Official Website</a></li>
+<li>📦 <a href="https://crates.io/">Crates.io</a> — Rust package registry</li>
+<li>🎮 <a href="https://play.rust-lang.org/">Rust Playground</a> — Try Rust in your browser</li>
+<li>📖 <a href="https://doc.rust-lang.org/rust-by-example/">Rust by Example</a></li>
+<li>📚 <a href="https://doc.rust-lang.org/nomicon/">The Rustonomicon</a> — Advanced unsafe Rust</li>
+</ul>
+<hr />
+<h2 id="-repository-structure"><a class="header" href="#-repository-structure">📂 Repository Structure</a></h2>
+<pre><code>rust/
+├── hello_cargo/          # Chapter 1: First Cargo project
+├── projects/
+│   └── hello_world/      # Chapter 1: Hello World without Cargo
+└── (more projects as I progress...)
+</code></pre>
+<hr />
+<h2 id="-whats-next-1"><a class="header" href="#-whats-next-1">📌 What's Next?</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Continue with Chapter 5 — Using Structs</li>
+<li><input disabled="" type="checkbox"/>
+Document Chapter 6 — Enums and Pattern Matching</li>
+<li><input disabled="" type="checkbox"/>
+Build more practical projects to reinforce concepts</li>
+<li><input disabled="" type="checkbox"/>
+Start working on Jagoron project components</li>
+</ul>
+<hr />
+<blockquote>
+<p>The journey of a thousand miles begins with a single step. Let's build something amazing with Rust! 🦀✨</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1--getting-started"><a class="header" href="#chapter-1--getting-started">Chapter 1 — Getting Started</a></h1>
+<p>Quick notes on setting up Rust and running your first programs.</p>
+<hr />
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Install Rust using <code>rustup</code> (the official installer):</p>
+<pre><code class="language-bash">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<p>Check installation:</p>
+<pre><code class="language-bash">rustc --version
+cargo --version
+</code></pre>
+<hr />
+<h2 id="hello-world-without-cargo"><a class="header" href="#hello-world-without-cargo">Hello World (without Cargo)</a></h2>
+<p>Basic Rust program structure:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!("I am fever coding");
+}</code></pre></pre>
+<p>Compile and run:</p>
+<pre><code class="language-bash">rustc main.rs
+./main
+</code></pre>
+<p><strong>Key points:</strong></p>
+<ul>
+<li><code>fn main()</code> is the entry point</li>
+<li><code>println!</code> is a macro (note the <code>!</code>)</li>
+<li>Rust uses semicolons to end statements</li>
+</ul>
+<hr />
+<h2 id="hello-world-with-cargo"><a class="header" href="#hello-world-with-cargo">Hello World with Cargo</a></h2>
+<p>Cargo is Rust's build system and package manager. Much better than manual compilation.</p>
+<p>Create new project:</p>
+<pre><code class="language-bash">cargo new hello_cargo
+cd hello_cargo
+</code></pre>
+<p>This generates:</p>
+<pre><code>hello_cargo/
+├── Cargo.toml    # Project metadata and dependencies
+└── src/
+    └── main.rs   # Your code
+</code></pre>
+<p><strong>Cargo.toml</strong> example:</p>
+<pre><code class="language-toml">[package]
+name = "hello_cargo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+</code></pre>
+<p>Build and run:</p>
+<pre><code class="language-bash">cargo build      # Compiles to target/debug/
+cargo run        # Builds + runs in one command
+cargo check      # Fast compile check without executable
+</code></pre>
+<hr />
+<h2 id="key-takeaways"><a class="header" href="#key-takeaways">Key Takeaways</a></h2>
+<ul>
+<li><strong>rustc</strong>: The Rust compiler (use directly for single files)</li>
+<li><strong>cargo new</strong>: Creates new project with proper structure</li>
+<li><strong>cargo build</strong>: Compiles your project</li>
+<li><strong>cargo run</strong>: Build + execute in one step</li>
+<li><strong>cargo check</strong>: Quick syntax/type checking without full compilation</li>
+</ul>
+<p>Use Cargo for everything beyond simple one-file experiments.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-2--programming-a-guessing-game"><a class="header" href="#chapter-2--programming-a-guessing-game">Chapter 2 — Programming a Guessing Game</a></h1>
+<p>Hands-on tutorial building a number guessing game. Covers variables, input, external crates, and match expressions.</p>
+<hr />
+<h2 id="the-complete-game"><a class="header" href="#the-complete-game">The Complete Game</a></h2>
+<pre><pre class="playground"><code class="language-rust">use std::io;
+use std::cmp::Ordering;
+use rand::Rng;
+
+fn main() {
+    println!("Guess the number!");
+
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+
+    loop {
+        println!("Please input your guess.");
+
+        let mut guess = String::new();
+
+        io::stdin()
+            .read_line(&amp;mut guess)
+            .expect("Failed to read line");
+
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) =&gt; num,
+            Err(_) =&gt; continue,
+        };
+
+        println!("You guessed: {}", guess);
+
+        match guess.cmp(&amp;secret_number) {
+            Ordering::Less =&gt; println!("Too small!"),
+            Ordering::Greater =&gt; println!("Too big!"),
+            Ordering::Equal =&gt; {
+                println!("You win!");
+                break;
+            }
+        }
+    }
+}</code></pre></pre>
+<hr />
+<h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
+<h3 id="variables-and-mutability"><a class="header" href="#variables-and-mutability">Variables and Mutability</a></h3>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut guess = String::new();  // mutable variable
+let secret_number = 42;         // immutable by default
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li>Variables are immutable by default</li>
+<li>Use <code>mut</code> to make them mutable</li>
+</ul>
+<h3 id="using-external-crates"><a class="header" href="#using-external-crates">Using External Crates</a></h3>
+<p>Add to <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">[dependencies]
+rand = "0.8.5"
+</code></pre>
+<p>Import in code:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use rand::Rng;
+<span class="boring">}</span></code></pre></pre>
+<h3 id="reading-user-input"><a class="header" href="#reading-user-input">Reading User Input</a></h3>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>io::stdin()
+    .read_line(&amp;mut guess)
+    .expect("Failed to read line");
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li><code>&amp;mut guess</code> passes a mutable reference</li>
+<li><code>expect()</code> handles potential errors</li>
+</ul>
+<h3 id="type-conversion"><a class="header" href="#type-conversion">Type Conversion</a></h3>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let guess: u32 = guess.trim().parse()
+    .expect("Please type a number!");
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li><code>trim()</code> removes whitespace</li>
+<li><code>parse()</code> converts string to number</li>
+<li>Type annotation <code>: u32</code> tells Rust what type to parse into</li>
+</ul>
+<h3 id="match-expressions"><a class="header" href="#match-expressions">Match Expressions</a></h3>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>match guess.cmp(&amp;secret_number) {
+    Ordering::Less =&gt; println!("Too small!"),
+    Ordering::Greater =&gt; println!("Too big!"),
+    Ordering::Equal =&gt; {
+        println!("You win!");
+        break;
+    }
+}
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li><code>match</code> is like switch but more powerful</li>
+<li>Must handle all possible cases</li>
+<li>Can execute multiple statements in arms using <code>{}</code></li>
+</ul>
+<h3 id="error-handling-with-match"><a class="header" href="#error-handling-with-match">Error Handling with Match</a></h3>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let guess: u32 = match guess.trim().parse() {
+    Ok(num) =&gt; num,
+    Err(_) =&gt; continue,
+};
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li><code>parse()</code> returns <code>Result&lt;T, E&gt;</code> (Ok or Err)</li>
+<li>Match on the result to handle both cases</li>
+<li><code>continue</code> skips to next loop iteration on error</li>
+</ul>
+<hr />
+<h2 id="takeaways"><a class="header" href="#takeaways">Takeaways</a></h2>
+<ul>
+<li>Rust has no built-in randomness (use <code>rand</code> crate)</li>
+<li><code>loop</code> creates infinite loops (use <code>break</code> to exit)</li>
+<li>References (<code>&amp;</code>) let you access data without taking ownership</li>
+<li><code>Result</code> type forces you to handle errors explicitly</li>
+<li>Match expressions are exhaustive (must cover all cases)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-3--common-programming-concepts"><a class="header" href="#chapter-3--common-programming-concepts">Chapter 3 — Common Programming Concepts</a></h1>
+<p>Fundamental Rust concepts: variables, data types, functions, and control flow.</p>
+<hr />
+<h2 id="variables-and-mutability-1"><a class="header" href="#variables-and-mutability-1">Variables and Mutability</a></h2>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;           // immutable
+let mut y = 10;      // mutable
+y = 15;              // OK
+
+const MAX_POINTS: u32 = 100_000;  // constant (always immutable)
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Shadowing:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;
+let x = x + 1;       // shadows previous x
+let x = x * 2;       // shadows again
+<span class="boring">}</span></code></pre></pre>
+<p>Shadowing lets you reuse names and change types:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let spaces = "   ";
+let spaces = spaces.len();  // different type, same name
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="data-types"><a class="header" href="#data-types">Data Types</a></h2>
+<h3 id="scalar-types"><a class="header" href="#scalar-types">Scalar Types</a></h3>
+<p><strong>Integers:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a: i32 = -42;    // signed 32-bit
+let b: u64 = 100;    // unsigned 64-bit
+<span class="boring">}</span></code></pre></pre>
+<p>Types: <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>i128</code>, <code>isize</code> (signed)<br />
+Types: <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, <code>u128</code>, <code>usize</code> (unsigned)</p>
+<p><strong>Floats:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 2.0;         // f64 (default)
+let y: f32 = 3.0;    // f32
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Booleans:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let t = true;
+let f: bool = false;
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Characters:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let c = 'z';
+let emoji = '😻';    // Unicode scalar value
+<span class="boring">}</span></code></pre></pre>
+<h3 id="compound-types"><a class="header" href="#compound-types">Compound Types</a></h3>
+<p><strong>Tuples:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let tup: (i32, f64, u8) = (500, 6.4, 1);
+let (x, y, z) = tup;           // destructuring
+let five_hundred = tup.0;      // index access
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Arrays:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = [1, 2, 3, 4, 5];
+let months = ["Jan", "Feb", "Mar"];
+let a: [i32; 5] = [1, 2, 3, 4, 5];  // type annotation
+let a = [3; 5];                      // [3, 3, 3, 3, 3]
+
+let first = a[0];
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="functions-1"><a class="header" href="#functions-1">Functions</a></h2>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    another_function(5, 'h');
+}
+
+fn another_function(x: i32, unit_label: char) {
+    println!("Value: {x}{unit_label}");
+}</code></pre></pre>
+<p><strong>Return values:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn five() -&gt; i32 {
+    5  // no semicolon = expression (returns value)
+}
+
+fn plus_one(x: i32) -&gt; i32 {
+    x + 1  // expression
+}
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Statements vs Expressions:</strong></p>
+<ul>
+<li>Statements don't return values: <code>let y = 6;</code></li>
+<li>Expressions return values: <code>5 + 6</code>, <code>{ let x = 3; x + 1 }</code></li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let y = {
+    let x = 3;
+    x + 1  // no semicolon = expression
+};  // y = 4
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h2>
+<h3 id="ifelse"><a class="header" href="#ifelse">if/else</a></h3>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let number = 6;
+
+if number % 4 == 0 {
+    println!("divisible by 4");
+} else if number % 3 == 0 {
+    println!("divisible by 3");
+} else {
+    println!("not divisible by 4 or 3");
+}
+<span class="boring">}</span></code></pre></pre>
+<p><strong>if in let:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let condition = true;
+let number = if condition { 5 } else { 6 };
+<span class="boring">}</span></code></pre></pre>
+<h3 id="loops"><a class="header" href="#loops">Loops</a></h3>
+<p><strong>loop (infinite):</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>loop {
+    println!("again!");
+    break;  // exit loop
+}
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Return from loop:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let result = loop {
+    counter += 1;
+    if counter == 10 {
+        break counter * 2;
+    }
+};
+<span class="boring">}</span></code></pre></pre>
+<p><strong>while:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut number = 3;
+while number != 0 {
+    println!("{number}!");
+    number -= 1;
+}
+<span class="boring">}</span></code></pre></pre>
+<p><strong>for:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = [10, 20, 30, 40, 50];
+for element in a {
+    println!("{element}");
+}
+
+for number in (1..4).rev() {  // 3, 2, 1
+    println!("{number}!");
+}
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="quick-reference"><a class="header" href="#quick-reference">Quick Reference</a></h2>
+<ul>
+<li>Variables immutable by default, use <code>mut</code> for mutability</li>
+<li>Constants use <code>const</code> and must have type annotation</li>
+<li>Shadowing allows reusing variable names</li>
+<li>Rust is statically typed (compiler infers types)</li>
+<li>Tuples have fixed size, mixed types</li>
+<li>Arrays have fixed size, same type</li>
+<li>Functions must declare parameter types</li>
+<li>Last expression in function is return value (no semicolon)</li>
+<li><code>if</code> is an expression (can return values)</li>
+<li><code>for</code> loops are safest for iteration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-4--understanding-ownership"><a class="header" href="#chapter-4--understanding-ownership">Chapter 4 — Understanding Ownership</a></h1>
+<p>Rust's most unique feature. Memory safety without garbage collection.</p>
+<hr />
+<h2 id="the-three-rules-of-ownership"><a class="header" href="#the-three-rules-of-ownership">The Three Rules of Ownership</a></h2>
+<ol>
+<li>Each value has an <strong>owner</strong></li>
+<li>There can only be <strong>one owner</strong> at a time</li>
+<li>When the owner goes out of scope, the value is <strong>dropped</strong></li>
+</ol>
+<hr />
+<h2 id="stack-vs-heap"><a class="header" href="#stack-vs-heap">Stack vs Heap</a></h2>
+<p><strong>Stack:</strong> Fast, fixed-size data (integers, booleans, etc.)<br />
+<strong>Heap:</strong> Slower, dynamic-size data (String, Vec, etc.)</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;              // stored on stack
+let s = String::from("hello");  // stored on heap
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="move-semantics"><a class="header" href="#move-semantics">Move Semantics</a></h2>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s1 = String::from("hello");
+let s2 = s1;  // s1 is MOVED to s2
+
+// println!("{s1}");  // ERROR! s1 no longer valid
+println!("{s2}");     // OK
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Why?</strong> Prevents double-free errors. Only <code>s2</code> owns the data now.</p>
+<p><strong>Stack-only data copies:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;
+let y = x;  // x is COPIED (not moved)
+
+println!("{x}, {y}");  // Both valid!
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="clone-deep-copy"><a class="header" href="#clone-deep-copy">Clone (Deep Copy)</a></h2>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s1 = String::from("hello");
+let s2 = s1.clone();  // expensive deep copy
+
+println!("{s1}, {s2}");  // Both valid
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="copy-trait"><a class="header" href="#copy-trait">Copy Trait</a></h2>
+<p>Types with <code>Copy</code> trait are copied instead of moved:</p>
+<ul>
+<li>All integers: <code>i32</code>, <code>u64</code>, etc.</li>
+<li>Booleans: <code>bool</code></li>
+<li>Floats: <code>f64</code>, <code>f32</code></li>
+<li>Characters: <code>char</code></li>
+<li>Tuples (if all elements are <code>Copy</code>)</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;
+let y = x;  // Copy happens automatically
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="ownership-and-functions"><a class="header" href="#ownership-and-functions">Ownership and Functions</a></h2>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let s = String::from("hello");
+    takes_ownership(s);  // s moved into function
+    // println!("{s}");  // ERROR! s no longer valid
+
+    let x = 5;
+    makes_copy(x);  // x copied into function
+    println!("{x}");  // OK! x still valid
+}
+
+fn takes_ownership(some_string: String) {
+    println!("{some_string}");
+}  // some_string dropped here
+
+fn makes_copy(some_integer: i32) {
+    println!("{some_integer}");
+}</code></pre></pre>
+<p><strong>Return values transfer ownership:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn gives_ownership() -&gt; String {
+    String::from("yours")  // returned value moves out
+}
+
+fn takes_and_gives_back(a_string: String) -&gt; String {
+    a_string  // returned back to caller
+}
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="references-and-borrowing"><a class="header" href="#references-and-borrowing">References and Borrowing</a></h2>
+<p>References let you use a value without taking ownership.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let s1 = String::from("hello");
+    let len = calculate_length(&amp;s1);  // borrow s1
+    println!("'{s1}' has length {len}");  // s1 still valid!
+}
+
+fn calculate_length(s: &amp;String) -&gt; usize {
+    s.len()
+}  // s goes out of scope, but doesn't drop the data (not owner)</code></pre></pre>
+<p><strong>Mutable references:</strong></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut s = String::from("hello");
+    change(&amp;mut s);
+    println!("{s}");  // "hello, world"
+}
+
+fn change(some_string: &amp;mut String) {
+    some_string.push_str(", world");
+}</code></pre></pre>
+<h3 id="reference-rules"><a class="header" href="#reference-rules">Reference Rules</a></h3>
+<ol>
+<li>You can have <strong>either</strong>:
+<ul>
+<li>One mutable reference, <strong>OR</strong></li>
+<li>Any number of immutable references</li>
+</ul>
+</li>
+<li>References must always be valid (no dangling references)</li>
+</ol>
+<p><strong>This fails:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut s = String::from("hello");
+let r1 = &amp;mut s;
+let r2 = &amp;mut s;  // ERROR! Can't have two mutable refs
+<span class="boring">}</span></code></pre></pre>
+<p><strong>This works:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut s = String::from("hello");
+let r1 = &amp;s;
+let r2 = &amp;s;  // OK! Multiple immutable refs allowed
+println!("{r1}, {r2}");
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Scope matters:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut s = String::from("hello");
+
+let r1 = &amp;s;
+let r2 = &amp;s;
+println!("{r1}, {r2}");
+// r1 and r2 no longer used after this
+
+let r3 = &amp;mut s;  // OK! No overlap with r1, r2
+println!("{r3}");
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="slices"><a class="header" href="#slices">Slices</a></h2>
+<p>Slices reference a contiguous sequence without taking ownership.</p>
+<p><strong>String slices:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = String::from("hello world");
+
+let hello = &amp;s[0..5];   // "hello"
+let world = &amp;s[6..11];  // "world"
+
+// Shorthand
+let hello = &amp;s[..5];    // from start
+let world = &amp;s[6..];    // to end
+let whole = &amp;s[..];     // entire string
+<span class="boring">}</span></code></pre></pre>
+<p><strong>String literals are slices:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s = "Hello, world!";  // type: &amp;str (immutable)
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Array slices:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = [1, 2, 3, 4, 5];
+let slice = &amp;a[1..3];  // [2, 3]
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Practical example:</strong></p>
+<pre><pre class="playground"><code class="language-rust">fn first_word(s: &amp;str) -&gt; &amp;str {
+    let bytes = s.as_bytes();
+
+    for (i, &amp;item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &amp;s[0..i];
+        }
+    }
+
+    &amp;s[..]
+}
+
+fn main() {
+    let my_string = String::from("hello world");
+    let word = first_word(&amp;my_string);  // works with String
+    
+    let my_literal = "hello world";
+    let word = first_word(my_literal);  // works with &amp;str
+}</code></pre></pre>
+<hr />
+<h2 id="common-ownership-errors"><a class="header" href="#common-ownership-errors">Common Ownership Errors</a></h2>
+<p><strong>Use after move:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let s1 = String::from("hello");
+let s2 = s1;
+println!("{s1}");  // ERROR: value borrowed after move
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Dangling reference:</strong></p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn dangle() -&gt; &amp;String {  // ERROR: returns reference to dropped value
+    let s = String::from("hello");
+    &amp;s
+}  // s dropped here, but we're returning a reference to it!
+<span class="boring">}</span></code></pre></pre>
+<p><strong>Fix:</strong> Return the String itself (transfer ownership):</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn no_dangle() -&gt; String {
+    let s = String::from("hello");
+    s  // ownership moved out
+}
+<span class="boring">}</span></code></pre></pre>
+<hr />
+<h2 id="key-takeaways-1"><a class="header" href="#key-takeaways-1">Key Takeaways</a></h2>
+<ul>
+<li>Ownership prevents memory bugs at compile time</li>
+<li>Move semantics by default for heap data</li>
+<li>Use references (<code>&amp;</code>) to borrow without taking ownership</li>
+<li>Mutable refs are exclusive, immutable refs can be shared</li>
+<li>Slices are references to part of a collection</li>
+<li>Compiler enforces all these rules - no runtime overhead!</li>
+</ul>
 
                     </main>
 
@@ -3903,11 +4571,19 @@ Using the LIMIT clause. Example: SELECT * FROM users LIMIT 10;
 
 
 
+        <script>
+            window.playground_line_numbers = true;
+        </script>
 
         <script>
             window.playground_copyable = true;
         </script>
 
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
 
         <script src="elasticlunr.min.js"></script>
         <script src="mark.min.js"></script>
@@ -3918,6 +4594,7 @@ Using the LIMIT clause. Example: SELECT * FROM users LIMIT 10;
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
+        <script src="theme/js/custom.js"></script>
 
         <script>
         window.addEventListener('load', function() {

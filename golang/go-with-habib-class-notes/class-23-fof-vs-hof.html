@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="navy" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
         
-        <meta name="description" content="">
+        <meta name="description" content="A living notebook documenting my journey through Golang, Rust, SQL, and other programming languages — organized notes, experiments, and practical examples.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/css/custom.css">
 
     </head>
     <body class="sidebar-visible no-js">
@@ -36,7 +37,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -61,7 +62,7 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('light')
+            html.classList.remove('navy')
             html.classList.add(theme);
             var body = document.querySelector('body');
             body.classList.remove('no-js')
@@ -88,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../golang/intro.html"><strong aria-hidden="true">2.</strong> Golang</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/go-with-habib-class-notes.html"><strong aria-hidden="true">2.1.</strong> Go With Habib Class Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-0-go-basics.html"><strong aria-hidden="true">2.1.1.</strong> Go Basics</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-16-package-scope.html"><strong aria-hidden="true">2.1.2.</strong> Class 16 - Package Scope</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-17-scope-example.html"><strong aria-hidden="true">2.1.3.</strong> Class 17 - Scope Example</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-18-variable-shadowing.html"><strong aria-hidden="true">2.1.4.</strong> Class 18 - Variable Shadowing</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-19-function-types.html"><strong aria-hidden="true">2.1.5.</strong> Class 19 - Function Types</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-20-init-function.html"><strong aria-hidden="true">2.1.6.</strong> Class 20 - Init Function</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-21-anonymous-func-and-iife.html"><strong aria-hidden="true">2.1.7.</strong> Class 21 - Anonymous Functions and IIFE</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-22-function-expression-example.html"><strong aria-hidden="true">2.1.8.</strong> Class 22 - Function Expression Example</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-23-fof-vs-hof.html" class="active"><strong aria-hidden="true">2.1.9.</strong> Class 23 - Function of Function vs Higher Order Function</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-24-internal-memory.html"><strong aria-hidden="true">2.1.10.</strong> Class 24 - Internal Memory</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-25-end-of-internal-memory.html"><strong aria-hidden="true">2.1.11.</strong> Class 25 - End of Internal Memory</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-26-closure.html"><strong aria-hidden="true">2.1.12.</strong> Class 26 - Closure</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-27-struct.html"><strong aria-hidden="true">2.1.13.</strong> Class 27 - Struct</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-28-receiver-function.html"><strong aria-hidden="true">2.1.14.</strong> Class 28 - Receiver Function</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-29-array.html"><strong aria-hidden="true">2.1.15.</strong> Class 29 - Array</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-30-pointers.html"><strong aria-hidden="true">2.1.16.</strong> Class 30 - Pointers</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-31-slices.html"><strong aria-hidden="true">2.1.17.</strong> Class 31 - Slices</a></li></ol></li><li class="chapter-item expanded "><a href="../../golang/experiment/experiments.html"><strong aria-hidden="true">2.2.</strong> Experiments</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../golang/experiment/blank-identifier.html"><strong aria-hidden="true">2.2.1.</strong> Blank Identifier</a></li><li class="chapter-item expanded "><a href="../../golang/experiment/init-function.html"><strong aria-hidden="true">2.2.2.</strong> Init Function</a></li><li class="chapter-item expanded "><a href="../../golang/experiment/partial-redeclaration.html"><strong aria-hidden="true">2.2.3.</strong> Partial Declaration</a></li><li class="chapter-item expanded "><a href="../../golang/experiment/pointer-experiment.html"><strong aria-hidden="true">2.2.4.</strong> Pointer Experiment</a></li><li class="chapter-item expanded "><a href="../../golang/experiment/slice-capacity.html"><strong aria-hidden="true">2.2.5.</strong> Slice Capacity testing</a></li><li class="chapter-item expanded "><a href="../../golang/experiment/io-methods-golang.html"><strong aria-hidden="true">2.2.6.</strong> I/O methods in Golang</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../sql/intro.html"><strong aria-hidden="true">3.</strong> SQL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../sql/cheatsheet/00-sql-cheatsheet.html"><strong aria-hidden="true">3.1.</strong> SQL Cheatsheet</a></li><li class="chapter-item expanded "><a href="../../sql/flashcards/flashcards.html"><strong aria-hidden="true">3.2.</strong> Flash cards</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="../../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../golang/intro.html"><strong aria-hidden="true">2.</strong> Golang</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/go-with-habib-class-notes.html"><strong aria-hidden="true">2.1.</strong> Go With Habib Class Notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-0-go-basics.html"><strong aria-hidden="true">2.1.1.</strong> Go Basics</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-16-package-scope.html"><strong aria-hidden="true">2.1.2.</strong> Class 16 - Package Scope</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-17-scope-example.html"><strong aria-hidden="true">2.1.3.</strong> Class 17 - Scope Example</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-18-variable-shadowing.html"><strong aria-hidden="true">2.1.4.</strong> Class 18 - Variable Shadowing</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-19-function-types.html"><strong aria-hidden="true">2.1.5.</strong> Class 19 - Function Types</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-20-init-function.html"><strong aria-hidden="true">2.1.6.</strong> Class 20 - Init Function</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-21-anonymous-func-and-iife.html"><strong aria-hidden="true">2.1.7.</strong> Class 21 - Anonymous Functions and IIFE</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-22-function-expression-example.html"><strong aria-hidden="true">2.1.8.</strong> Class 22 - Function Expression Example</a></li><li class="chapter-item expanded "><a href="../../golang/go-with-habib-class-notes/class-23-fof-vs-hof.html" class="active"><strong aria-hidden="true">2.1.9.</strong> Class 23 - Function of Function vs Higher Order Function</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-24-internal-memory.html"><strong aria-hidden="true">2.1.10.</strong> Class 24 - Internal Memory</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-25-end-of-internal-memory.html"><strong aria-hidden="true">2.1.11.</strong> Class 25 - End of Internal Memory</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-26-closure.html"><strong aria-hidden="true">2.1.12.</strong> Class 26 - Closure</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-27-struct.html"><strong aria-hidden="true">2.1.13.</strong> Class 27 - Struct</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-28-receiver-function.html"><strong aria-hidden="true">2.1.14.</strong> Class 28 - Receiver Function</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-29-array.html"><strong aria-hidden="true">2.1.15.</strong> Class 29 - Array</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-30-pointers.html"><strong aria-hidden="true">2.1.16.</strong> Class 30 - Pointers</a></li><li class="chapter-item "><a href="../../golang/go-with-habib-class-notes/class-31-slices.html"><strong aria-hidden="true">2.1.17.</strong> Class 31 - Slices</a></li></ol></li><li class="chapter-item "><a href="../../golang/experiment/experiments.html"><strong aria-hidden="true">2.2.</strong> Experiments</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../golang/experiment/blank-identifier.html"><strong aria-hidden="true">2.2.1.</strong> Blank Identifier</a></li><li class="chapter-item "><a href="../../golang/experiment/init-function.html"><strong aria-hidden="true">2.2.2.</strong> Init Function</a></li><li class="chapter-item "><a href="../../golang/experiment/partial-redeclaration.html"><strong aria-hidden="true">2.2.3.</strong> Partial Declaration</a></li><li class="chapter-item "><a href="../../golang/experiment/pointer-experiment.html"><strong aria-hidden="true">2.2.4.</strong> Pointer Experiment</a></li><li class="chapter-item "><a href="../../golang/experiment/slice-capacity.html"><strong aria-hidden="true">2.2.5.</strong> Slice Capacity testing</a></li><li class="chapter-item "><a href="../../golang/experiment/io-methods-golang.html"><strong aria-hidden="true">2.2.6.</strong> I/O methods in Golang</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../sql/intro.html"><strong aria-hidden="true">3.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../sql/cheatsheet/00-sql-cheatsheet.html"><strong aria-hidden="true">3.1.</strong> SQL Cheatsheet</a></li><li class="chapter-item "><a href="../../sql/flashcards/flashcards.html"><strong aria-hidden="true">3.2.</strong> Flash cards</a></li></ol></li><li class="chapter-item "><a href="../../rust/intro.html"><strong aria-hidden="true">4.</strong> Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../rust/chapter-01-getting-started.html"><strong aria-hidden="true">4.1.</strong> Chapter 1 — Getting Started</a></li><li class="chapter-item "><a href="../../rust/chapter-02-guessing-game.html"><strong aria-hidden="true">4.2.</strong> Chapter 2 — Programming a Guessing Game</a></li><li class="chapter-item "><a href="../../rust/chapter-03-common-concepts.html"><strong aria-hidden="true">4.3.</strong> Chapter 3 — Common Programming Concepts</a></li><li class="chapter-item "><a href="../../rust/chapter-04-ownership.html"><strong aria-hidden="true">4.4.</strong> Chapter 4 — Understanding Ownership</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -146,6 +147,9 @@
                     <div class="right-buttons">
                         <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/yourusername/bytebook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
 
                     </div>
@@ -312,11 +316,19 @@ func call() func(x int, y int) {
 
 
 
+        <script>
+            window.playground_line_numbers = true;
+        </script>
 
         <script>
             window.playground_copyable = true;
         </script>
 
+        <script src="../../ace.js"></script>
+        <script src="../../editor.js"></script>
+        <script src="../../mode-rust.js"></script>
+        <script src="../../theme-dawn.js"></script>
+        <script src="../../theme-tomorrow_night.js"></script>
 
         <script src="../../elasticlunr.min.js"></script>
         <script src="../../mark.min.js"></script>
@@ -327,6 +339,7 @@ func call() func(x int, y int) {
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
+        <script src="../../theme/js/custom.js"></script>
 
 
     </div>
